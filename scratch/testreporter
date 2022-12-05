@@ -1,0 +1,3 @@
+#! /bin/bash
+
+/public/home/chengxl/cesm/cime/scripts/Tools/testreporter.py "$@"

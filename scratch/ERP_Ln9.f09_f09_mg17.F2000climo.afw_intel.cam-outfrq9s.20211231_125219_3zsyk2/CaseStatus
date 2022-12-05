@@ -1,0 +1,9 @@
+2021-12-31 12:52:44: xmlchange success <command> ./xmlchange --force ROF_NCPL=$ATM_NCPL  </command>
+ ---------------------------------------------------
+2021-12-31 12:52:44: xmlchange success <command> ./xmlchange --force GLC_NCPL=$ATM_NCPL  </command>
+ ---------------------------------------------------
+2021-12-31 12:52:47: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:52:47: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+ ---------------------------------------------------

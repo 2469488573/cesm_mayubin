@@ -1,0 +1,3 @@
+PASS ERI.T62_g37.G.afw_intel.pop-cice CREATE_NEWCASE
+PASS ERI.T62_g37.G.afw_intel.pop-cice XML
+FAIL ERI.T62_g37.G.afw_intel.pop-cice SETUP

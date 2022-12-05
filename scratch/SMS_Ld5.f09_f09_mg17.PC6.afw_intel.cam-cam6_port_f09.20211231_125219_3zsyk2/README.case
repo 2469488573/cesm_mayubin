@@ -1,0 +1,44 @@
+2021-12-31 12:53:13: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_Ld5.f09_f09_mg17.PC6.afw_intel.cam-cam6_port_f09.20211231_125219_3zsyk2 --res f09_f09_mg17 --compset PC6 --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/cam6_port_f09 --walltime 00:30:00
+ ---------------------------------------------------
+2021-12-31 12:53:13: Compset longname is 2000_CAM60%PORT_SLND_SICE_SOCN_SROF_SGLC_SWAV
+ ---------------------------------------------------
+2021-12-31 12:53:13: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:53:13: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:53:13: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:53:13: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component ATM is CAM cam6 physics:CAM Parallel Offline Radiation Tool:
+ ---------------------------------------------------
+2021-12-31 12:53:13: ATM_GRID is 0.9x1.25
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component LND is Stub land component
+ ---------------------------------------------------
+2021-12-31 12:53:13: LND_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component ICE is Stub ice component
+ ---------------------------------------------------
+2021-12-31 12:53:13: ICE_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component OCN is Stub ocn component
+ ---------------------------------------------------
+2021-12-31 12:53:13: OCN_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component ROF is Stub river component
+ ---------------------------------------------------
+2021-12-31 12:53:13: ROF_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-12-31 12:53:13: GLC_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:53:13: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:53:13: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:53:19: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

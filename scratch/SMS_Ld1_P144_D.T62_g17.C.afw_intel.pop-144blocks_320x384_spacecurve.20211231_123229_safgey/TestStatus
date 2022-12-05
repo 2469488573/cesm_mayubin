@@ -1,0 +1,3 @@
+PASS SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve CREATE_NEWCASE
+PASS SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve XML
+FAIL SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve SETUP

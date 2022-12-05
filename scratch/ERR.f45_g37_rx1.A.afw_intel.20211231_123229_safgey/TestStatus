@@ -1,0 +1,3 @@
+PASS ERR.f45_g37_rx1.A.afw_intel CREATE_NEWCASE
+PASS ERR.f45_g37_rx1.A.afw_intel XML
+FAIL ERR.f45_g37_rx1.A.afw_intel SETUP

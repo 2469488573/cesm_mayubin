@@ -1,0 +1,44 @@
+2021-12-31 12:30:24: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERP_P36x2_D_Ld5.f10_f10_musgs.I1850Clm45BgcCru.afw_intel.clm-ciso.20211231_122920_iu2cwy --res f10_f10_musgs --compset I1850Clm45BgcCru --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/clm//cime_config/testdefs/testmods_dirs/clm/ciso --pecount 36x2 --walltime 00:20:00
+ ---------------------------------------------------
+2021-12-31 12:30:24: Compset longname is 1850_DATM%CRUv7_CLM45%BGC_SICE_SOCN_RTM_CISM2%NOEVOLVE_SWAV
+ ---------------------------------------------------
+2021-12-31 12:30:24: Compset specification file is /public/home/chengxl/cesm/components/clm//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:30:24: Pes     specification file is /public/home/chengxl/cesm/components/clm//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:30:24: Forcing is 1850
+ ---------------------------------------------------
+2021-12-31 12:30:24: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:30:24: Component ATM is  Data driven ATM  CLM CRU NCEP v7 data set 
+ ---------------------------------------------------
+2021-12-31 12:30:24: ATM_GRID is 10x15
+ ---------------------------------------------------
+2021-12-31 12:30:24: Component LND is clm4.5:BGC (vert. resol. CN and methane):
+ ---------------------------------------------------
+2021-12-31 12:30:24: LND_GRID is 10x15
+ ---------------------------------------------------
+2021-12-31 12:30:25: Component ICE is Stub ice component
+ ---------------------------------------------------
+2021-12-31 12:30:25: ICE_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:30:25: Component OCN is Stub ocn component
+ ---------------------------------------------------
+2021-12-31 12:30:25: OCN_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:30:25: Component ROF is RTM: River Transport Model
+ ---------------------------------------------------
+2021-12-31 12:30:25: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:30:25: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+ ---------------------------------------------------
+2021-12-31 12:30:25: GLC_GRID is gland4
+ ---------------------------------------------------
+2021-12-31 12:30:25: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:30:25: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:30:25: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:30:32: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

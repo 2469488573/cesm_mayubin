@@ -1,0 +1,15 @@
+2021-12-31 12:34:02: xmlchange success <command> ./xmlchange --force POP_TAVG_R8=TRUE  </command>
+ ---------------------------------------------------
+2021-12-31 12:34:03: xmlchange success <command> ./xmlchange --force --force POP_AUTO_DECOMP=FALSE  </command>
+ ---------------------------------------------------
+2021-12-31 12:34:03: xmlchange success <command> ./xmlchange --force --force POP_DECOMPTYPE=spacecurve  </command>
+ ---------------------------------------------------
+2021-12-31 12:34:04: xmlchange success <command> ./xmlchange --force --force POP_BLCKX=27,POP_BLCKY=32,POP_NX_BLOCKS=12,POP_NY_BLOCKS=12  </command>
+ ---------------------------------------------------
+2021-12-31 12:34:04: xmlchange success <command> ./xmlchange --force --force POP_MXBLCKS=5  </command>
+ ---------------------------------------------------
+2021-12-31 12:34:07: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:34:07: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/inputdata
+ ---------------------------------------------------

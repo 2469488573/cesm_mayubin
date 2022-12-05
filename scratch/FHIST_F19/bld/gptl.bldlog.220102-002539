@@ -1,0 +1,28 @@
+make -f /public/home/chengxl/cesm/cime/src/share/timing/Makefile install -C /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/gptl MACFILE=/public/home/chengxl/cesm/cases/FHIST_F19/Macros.make MODEL=gptl GPTL_DIR=/public/home/chengxl/cesm/cime/src/share/timing GPTL_LIBDIR=/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/gptl SHAREDPATH=/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads
+make: Entering directory `/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/gptl'
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/gptl.c
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/GPTLutil.c
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/GPTLget_memusage.c
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/GPTLprint_memusage.c
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/gptl_papi.c
+mpicc   -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align -fp-model precise -std=gnu99   -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI /public/home/chengxl/cesm/cime/src/share/timing/f_wrappers.c
+mpif90  -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align  -convert big_endian -assume byterecl -ftz -traceback -assume realloc_lhs -fp-model source    -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI -free   /public/home/chengxl/cesm/cime/src/share/timing/perf_utils.F90
+mpif90  -c -I/public/home/chengxl/cesm/cime/src/share/timing  -qno-opt-dynamic-align  -convert big_endian -assume byterecl -ftz -traceback -assume realloc_lhs -fp-model source    -O2 -debug minimal    -DFORTRANUNDERSCORE -DCPRINTEL  -DFORTRANUNDERSCORE -DCPRINTEL -DHAVE_MPI -free   /public/home/chengxl/cesm/cime/src/share/timing/perf_mod.F90
+ar rv libgptl.a gptl.o GPTLutil.o GPTLget_memusage.o GPTLprint_memusage.o gptl_papi.o f_wrappers.o perf_mod.o perf_utils.o
+a - gptl.o
+a - GPTLutil.o
+a - GPTLget_memusage.o
+a - GPTLprint_memusage.o
+a - gptl_papi.o
+a - f_wrappers.o
+a - perf_mod.o
+a - perf_utils.o
+cp -p /public/home/chengxl/cesm/cime/src/share/timing/gptl.h /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/include
+cp -p *.mod /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/include
+cp -p libgptl.a /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/lib
+make: Leaving directory `/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/gptl'
+/public/home/chengxl/cesm/cime/src/share/timing/gptl.c(3090): warning #810: conversion from "struct ompi_communicator_t *" to "int" may lose significant bits
+    if (((int) comm) == 0)
+        ^
+
+ar: creating libgptl.a

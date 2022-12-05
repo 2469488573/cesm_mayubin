@@ -1,0 +1,3 @@
+PASS ERS_Ln9.f19_f19_mg16.FX2000.afw_intel.cam-outfrq9s CREATE_NEWCASE
+PASS ERS_Ln9.f19_f19_mg16.FX2000.afw_intel.cam-outfrq9s XML
+FAIL ERS_Ln9.f19_f19_mg16.FX2000.afw_intel.cam-outfrq9s SETUP

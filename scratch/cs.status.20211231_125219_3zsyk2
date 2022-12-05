@@ -1,0 +1,3 @@
+#! /bin/bash
+
+/public/home/chengxl/cesm/cime/scripts/Tools/cs.status "$@" /public/home/chengxl/cesm/scratch/*.20211231_125219_3zsyk2/TestStatus

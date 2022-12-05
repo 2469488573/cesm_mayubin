@@ -1,0 +1,3 @@
+PASS ERS.T62_g16.C.afw_intel.pop-default CREATE_NEWCASE
+PASS ERS.T62_g16.C.afw_intel.pop-default XML
+FAIL ERS.T62_g16.C.afw_intel.pop-default SETUP

@@ -1,0 +1,5 @@
+2021-12-31 12:45:41: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:45:41: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+ ---------------------------------------------------

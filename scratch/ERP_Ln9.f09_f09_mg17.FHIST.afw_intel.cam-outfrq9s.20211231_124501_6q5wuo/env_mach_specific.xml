@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<file id="env_mach_specific.xml" version="2.0">
+  <header>
+    These variables control the machine dependent environment including
+    the paths to compilers and libraries external to cime such as netcdf,
+    environment variables for use in the running job should also be set	here.
+    </header>
+  <group id="compliant_values">
+    <entry id="run_exe" value="${EXEROOT}/cesm.exe ">
+      <type>char</type>
+      <desc>executable name</desc>
+    </entry>
+    <entry id="run_misc_suffix" value=" &gt;&gt; cesm.log.$LID 2&gt;&amp;1 ">
+      <type>char</type>
+      <desc>redirect for job output</desc>
+    </entry>
+  </group>
+  <module_system allow_error="true" type="module">
+    <init_path lang="perl">/usr/share/Modules/init/perl.pm</init_path>
+    <init_path lang="python">/usr/share/Modules/init/python.py</init_path>
+    <init_path lang="csh">/usr/share/Modules/init/csh</init_path>
+    <init_path lang="sh">/usr/share/Modules/init/sh</init_path>
+    <cmd_path lang="perl">/usr/bin/modulecmd perl</cmd_path>
+    <cmd_path lang="python">/usr/bin/modulecmd python</cmd_path>
+    <cmd_path lang="sh">module</cmd_path>
+    <cmd_path lang="csh">module</cmd_path>
+    <modules>
+      <command name="purge"/>
+    </modules>
+    <modules compiler="intel">
+      <command name="load">compiler/intel/2017.5.239</command>
+      <command name="load">mpi/hpcx/2.7.4/intel-2017.5.239</command>
+      <command name="load">mathlib/netcdf/4.4.1/</command>
+    </modules>
+  </module_system>
+  <environment_variables>
+    <env name="OMP_STACKSIZE">256M</env>
+  </environment_variables>
+  <resource_limits>
+    <resource name="RLIMIT_STACK">-1</resource>
+  </resource_limits>
+  <mpirun mpilib="default">
+    <executable>mpirun</executable>
+    <arguments>
+      <arg name="ntasks"> -np {{ total_tasks }} </arg>
+    </arguments>
+  </mpirun>
+</file>

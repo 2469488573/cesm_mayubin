@@ -1,0 +1,3 @@
+PASS IRT_Ld7.f09_g17.BHIST.afw_intel.allactive-defaultio CREATE_NEWCASE
+PASS IRT_Ld7.f09_g17.BHIST.afw_intel.allactive-defaultio XML
+FAIL IRT_Ld7.f09_g17.BHIST.afw_intel.allactive-defaultio SETUP

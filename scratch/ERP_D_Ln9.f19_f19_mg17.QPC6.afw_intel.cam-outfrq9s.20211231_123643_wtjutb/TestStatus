@@ -1,0 +1,3 @@
+PASS ERP_D_Ln9.f19_f19_mg17.QPC6.afw_intel.cam-outfrq9s CREATE_NEWCASE
+PASS ERP_D_Ln9.f19_f19_mg17.QPC6.afw_intel.cam-outfrq9s XML
+FAIL ERP_D_Ln9.f19_f19_mg17.QPC6.afw_intel.cam-outfrq9s SETUP

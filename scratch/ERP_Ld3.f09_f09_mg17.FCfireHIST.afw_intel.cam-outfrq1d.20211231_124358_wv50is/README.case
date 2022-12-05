@@ -1,0 +1,44 @@
+2021-12-31 12:44:36: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERP_Ld3.f09_f09_mg17.FCfireHIST.afw_intel.cam-outfrq1d.20211231_124358_wv50is --res f09_f09_mg17 --compset FCfireHIST --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/outfrq1d --walltime 00:40:00
+ ---------------------------------------------------
+2021-12-31 12:44:36: Compset longname is HIST_CAM60%CFIRE_CLM50%BGC-CROP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV
+ ---------------------------------------------------
+2021-12-31 12:44:36: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:44:36: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:44:36: Forcing is Historic transient 
+ ---------------------------------------------------
+2021-12-31 12:44:36: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component ATM is CAM cam6 physics:CAM-Chem troposphere/stratosphere chem with simplified volatility basis set SOA scheme and fire emissons :
+ ---------------------------------------------------
+2021-12-31 12:44:36: ATM_GRID is 0.9x1.25
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component LND is clm5.0:BGC (vert. resol. CN and methane) with prognostic crop:
+ ---------------------------------------------------
+2021-12-31 12:44:36: LND_GRID is 0.9x1.25
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component ICE is Sea ICE (cice) model version 5 :prescribed cice
+ ---------------------------------------------------
+2021-12-31 12:44:36: ICE_GRID is 0.9x1.25
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component OCN is DOCN   prescribed ocean mode
+ ---------------------------------------------------
+2021-12-31 12:44:36: OCN_GRID is 0.9x1.25
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
+ ---------------------------------------------------
+2021-12-31 12:44:36: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+ ---------------------------------------------------
+2021-12-31 12:44:36: GLC_GRID is gland4
+ ---------------------------------------------------
+2021-12-31 12:44:36: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:44:36: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:44:36: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:44:39: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

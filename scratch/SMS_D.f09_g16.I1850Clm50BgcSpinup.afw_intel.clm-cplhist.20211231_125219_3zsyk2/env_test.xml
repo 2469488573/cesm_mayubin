@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<file id="env_test.xml" version="2.0">
+  <header>These are the variables specific to a test case.</header>
+  <group id="test">
+    <entry id="CONFIG_TESTS_FILE" value="$CIMEROOT/config/config_tests.xml">
+      <type>char</type>
+      <values>
+        <value>$CIMEROOT/config/config_tests.xml</value>
+        <value component="clm">$COMP_ROOT_DIR_LND/cime_config/config_tests.xml</value>
+      </values>
+      <desc>file containing system test descriptions </desc>
+    </entry>
+    <entry id="SYSTEM_TESTS_DIR" value="$CIMEROOT/scripts/lib/CIME/SystemTests">
+      <type>char</type>
+      <values>
+        <value component="any">$CIMEROOT/scripts/lib/CIME/SystemTests</value>
+        <value component="clm">$COMP_ROOT_DIR_LND/cime_config/SystemTests</value>
+        <value component="cam">$COMP_ROOT_DIR_ATM/cime_config/SystemTests</value>
+        <value component="pop">$COMP_ROOT_DIR_OCN/cime_config/SystemTests</value>
+        <value component="nemo">$COMP_ROOT_DIR_OCN/cime_config/SystemTests</value>
+        <value component="cice">$COMP_ROOT_DIR_ICE/cime_config/SystemTests</value>
+        <value component="cism">$COMP_ROOT_DIR_GLC/cime_config/SystemTests</value>
+        <value component="rtm">$COMP_ROOT_DIR_ROF/cime_config/SystemTests</value>
+        <value component="mosart">$COMP_ROOT_DIR_ROF/cime_config/SystemTests</value>
+      </values>
+      <desc>directories containing cime compatible system test modules</desc>
+    </entry>
+    <entry id="NAME" value="UNSET">
+      <type>char</type>
+      <desc>Test type name</desc>
+    </entry>
+    <entry id="DESC" value="smoke startup test (default length)">
+      <type>char</type>
+      <desc>Test type descriptor</desc>
+    </entry>
+    <entry id="TESTCASE" value="SMS">
+      <type>char</type>
+      <desc>Testcase short name</desc>
+    </entry>
+    <entry id="CASEBASEID" value="SMS_D.f09_g16.I1850Clm50BgcSpinup.afw_intel.clm-cplhist">
+      <type>char</type>
+      <desc>Case base ID</desc>
+    </entry>
+    <entry id="IS_FIRST_RUN" value="TRUE">
+      <type>logical</type>
+      <valid_values>TRUE,FALSE</valid_values>
+      <desc>Is first run of test</desc>
+    </entry>
+    <entry id="TEST_ARGV" value="-testname SMS_D.f09_g16.I1850Clm50BgcSpinup.afw_intel.clm-cplhist -testroot /public/home/chengxl/cesm/scratch">
+      <type>char</type>
+      <desc>Arguments supplied to create_test</desc>
+    </entry>
+    <entry id="TEST_TESTID" value="20211231_125219_3zsyk2">
+      <type>char</type>
+      <desc>supplied or computed test id</desc>
+    </entry>
+    <entry id="TEST_MEMLEAK_TOLERANCE" value="0.10">
+      <type>real</type>
+      <desc>Expected relative memory usage growth for test</desc>
+    </entry>
+    <entry id="TEST_TPUT_TOLERANCE" value="0.25">
+      <type>real</type>
+      <desc>Expected throughput deviation</desc>
+    </entry>
+    <entry id="GENERATE_BASELINE" value="FALSE">
+      <type>logical</type>
+      <valid_values>TRUE,FALSE</valid_values>
+      <desc>Whether to generate a baseline</desc>
+    </entry>
+    <entry id="COMPARE_BASELINE" value="FALSE">
+      <type>logical</type>
+      <valid_values>TRUE,FALSE</valid_values>
+      <desc>Whether to compare the baseline</desc>
+    </entry>
+    <entry id="BASEGEN_CASE" value="UNSET">
+      <type>char</type>
+      <desc>The tagname we are comparing baselines against</desc>
+    </entry>
+    <entry id="BASECMP_CASE" value="UNSET">
+      <type>char</type>
+      <desc>The tagname we are comparing baselines against</desc>
+    </entry>
+    <entry id="BASELINE_ROOT" value="/public/home/chengxl/cesm/cesm_baselines">
+      <type>char</type>
+      <desc>The directory where baselines are stored</desc>
+    </entry>
+    <entry id="BASELINE_NAME_GEN" value="UNSET">
+      <type>char</type>
+      <desc>The tagname we are generating baselines for</desc>
+    </entry>
+    <entry id="BASELINE_NAME_CMP" value="UNSET">
+      <type>char</type>
+      <desc>The tagname we are comparing baselines against</desc>
+    </entry>
+    <entry id="CLEANUP" value="FALSE">
+      <type>logical</type>
+      <valid_values>TRUE,FALSE</valid_values>
+      <desc>Whether to clean the test after it is built/run</desc>
+    </entry>
+    <entry id="CCSM_CPRNC" value="${HOME}/cesm/tools/cime/tools/cprnc">
+      <type>char</type>
+      <desc>standard full pathname of the cprnc executable</desc>
+    </entry>
+  </group>
+  <test NAME="SMS">
+    <DESC>smoke startup test (default length)</DESC>
+    <INFO_DBUG>1</INFO_DBUG>
+    <DOUT_S>FALSE</DOUT_S>
+    <CONTINUE_RUN>FALSE</CONTINUE_RUN>
+    <REST_OPTION>none</REST_OPTION>
+    <HIST_OPTION>$STOP_OPTION</HIST_OPTION>
+    <HIST_N>$STOP_N</HIST_N>
+    <DEBUG>TRUE</DEBUG>
+  </test>
+</file>

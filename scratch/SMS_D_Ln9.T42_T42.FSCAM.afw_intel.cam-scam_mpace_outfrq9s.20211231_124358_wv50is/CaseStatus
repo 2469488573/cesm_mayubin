@@ -1,0 +1,27 @@
+2021-12-31 12:44:29: xmlchange success <command> ./xmlchange --force MPILIB=mpi-serial  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:30: xmlchange success <command> ./xmlchange --force REST_OPTION=never  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:31: xmlchange success <command> ./xmlchange --force CLM_FORCE_COLDSTART=on  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:31: xmlchange success <command> ./xmlchange --force PTS_LON=206.0  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:32: xmlchange success <command> ./xmlchange --force PTS_LAT=70.5  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:33: xmlchange success <command> ./xmlchange --force RUN_STARTDATE=2004-10-05  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:33: xmlchange success <command> ./xmlchange --force START_TOD=7171  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:34: xmlchange success <command> ./xmlchange --force STOP_OPTION=nsteps  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:35: xmlchange success <command> ./xmlchange --force STOP_N=1242  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:35: xmlchange success <command> ./xmlchange --force ROF_NCPL=$ATM_NCPL  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:36: xmlchange success <command> ./xmlchange --force GLC_NCPL=$ATM_NCPL  </command>
+ ---------------------------------------------------
+2021-12-31 12:44:38: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:44:38: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+ ---------------------------------------------------

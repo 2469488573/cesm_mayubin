@@ -1,0 +1,3 @@
+PASS ERS_Ld7.f19_g17.B1850.afw_intel.allactive-defaultio CREATE_NEWCASE
+PASS ERS_Ld7.f19_g17.B1850.afw_intel.allactive-defaultio XML
+FAIL ERS_Ld7.f19_g17.B1850.afw_intel.allactive-defaultio SETUP

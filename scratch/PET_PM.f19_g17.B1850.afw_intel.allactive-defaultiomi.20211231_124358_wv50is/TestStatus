@@ -1,0 +1,3 @@
+PASS PET_PM.f19_g17.B1850.afw_intel.allactive-defaultiomi CREATE_NEWCASE
+PASS PET_PM.f19_g17.B1850.afw_intel.allactive-defaultiomi XML
+FAIL PET_PM.f19_g17.B1850.afw_intel.allactive-defaultiomi SETUP

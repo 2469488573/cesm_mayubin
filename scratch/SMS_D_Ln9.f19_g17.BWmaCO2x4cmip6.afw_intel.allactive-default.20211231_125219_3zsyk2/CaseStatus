@@ -1,0 +1,5 @@
+2021-12-31 12:52:28: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:52:28: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+ ---------------------------------------------------

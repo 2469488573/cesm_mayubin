@@ -1,0 +1,7 @@
+2021-12-31 12:52:33: xmlchange success <command> ./xmlchange --force NTASKS_OCN=144  </command>
+ ---------------------------------------------------
+2021-12-31 12:52:38: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:52:38: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+ ---------------------------------------------------

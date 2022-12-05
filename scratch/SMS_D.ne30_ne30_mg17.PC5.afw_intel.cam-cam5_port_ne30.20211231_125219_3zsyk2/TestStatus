@@ -1,0 +1,3 @@
+PASS SMS_D.ne30_ne30_mg17.PC5.afw_intel.cam-cam5_port_ne30 CREATE_NEWCASE
+PASS SMS_D.ne30_ne30_mg17.PC5.afw_intel.cam-cam5_port_ne30 XML
+FAIL SMS_D.ne30_ne30_mg17.PC5.afw_intel.cam-cam5_port_ne30 SETUP

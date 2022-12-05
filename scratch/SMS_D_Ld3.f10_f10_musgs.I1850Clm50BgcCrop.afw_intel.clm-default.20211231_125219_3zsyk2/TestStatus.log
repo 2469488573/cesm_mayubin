@@ -1,0 +1,43 @@
+2021-12-31 12:53:35: CREATE_NEWCASE PASSED for test 'SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default.20211231_125219_3zsyk2 --res f10_f10_musgs --compset I1850Clm50BgcCrop --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/clm//cime_config/testdefs/testmods_dirs/clm/default --walltime 00:20:00
+Output: Compset longname is 1850_DATM%GSWP3v1_CLM50%BGC-CROP_SICE_SOCN_MOSART_CISM2%NOEVOLVE_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/clm//cime_config/config_compsets.xml
+Compset forcing is 1850
+ATM component is  Data driven ATM  GSWP3v1 data set 
+LND component is clm5.0:BGC (vert. resol. CN and methane) with prognostic crop:
+ICE component is Stub ice component
+OCN component is Stub ocn component
+ROF component is MOSART: MOdel for Scale Adaptive River Transport
+GLC component is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+WAV component is Stub wave component
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/clm//cime_config/config_pes.xml
+Machine is afw
+Pes setting: grid match    is l%10x15 
+Pes setting: grid          is a%10x15_l%10x15_oi%null_r%r05_g%gland4_w%null_m%usgs 
+Pes setting: compset       is 1850_DATM%GSWP3v1_CLM50%BGC-CROP_SICE_SOCN_MOSART_CISM2%NOEVOLVE_SWAV 
+Pes setting: tasks       is {'NTASKS_ATM': -2, 'NTASKS_ICE': -2, 'NTASKS_CPL': -2, 'NTASKS_LND': -2, 'NTASKS_WAV': -2, 'NTASKS_ROF': -2, 'NTASKS_OCN': -2, 'NTASKS_GLC': -2} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': 0, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: 1850_DATM%GSWP3v1_CLM50%BGC-CROP_SICE_SOCN_MOSART_CISM2%NOEVOLVE_SWAV 
+ Grid is: a%10x15_l%10x15_oi%null_r%r05_g%gland4_w%null_m%usgs 
+ Components in compset are: ['datm', 'clm', 'sice', 'socn', 'mosart', 'cism', 'swav', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default.20211231_125219_3zsyk2
+Adding user mods directory /public/home/chengxl/cesm/components/clm/cime_config/testdefs/testmods_dirs/clm/default
+RUN: /public/home/chengxl/cesm/scratch/SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default.20211231_125219_3zsyk2/shell_commands
+
+
+ ---------------------------------------------------
+2021-12-31 12:53:39: SETUP FAILED for test 'SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+
+ ---------------------------------------------------

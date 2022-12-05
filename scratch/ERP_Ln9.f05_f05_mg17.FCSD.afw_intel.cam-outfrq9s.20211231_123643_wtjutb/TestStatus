@@ -1,0 +1,3 @@
+PASS ERP_Ln9.f05_f05_mg17.FCSD.afw_intel.cam-outfrq9s CREATE_NEWCASE
+PASS ERP_Ln9.f05_f05_mg17.FCSD.afw_intel.cam-outfrq9s XML
+FAIL ERP_Ln9.f05_f05_mg17.FCSD.afw_intel.cam-outfrq9s SETUP

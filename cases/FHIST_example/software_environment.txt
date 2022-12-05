@@ -1,0 +1,112 @@
+Currently Loaded Modulefiles:
+  1) mpi/intelmpi/2017.4.239        8) mathlib/zlib/intel/1.2.11
+  2) mathlib/netcdf/intel/4.4.1     9) mathlib/libpng/intel/1.2.12
+  3) apps/ncview/intel/2.1.7       10) mathlib/cdo/intel/1.10.19
+  4) mathlib/hdf5/intel/1.8.20     11) apps/anaconda3/5.3.0
+  5) mathlib/jasper/intel/1.900.1  12) compiler/intel/2017.5.239
+  6) mathlib/jpeg/intel/9a         13) apps/ncl_ncarg/6.6.2
+  7) mathlib/pnetcdf/intel/1.12.1
+
+deeplearn=/data/chengxl/pblh_deeplearning
+MKLROOT=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl
+DAPL_UCM_RTU_TIME=8000
+MANPATH=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/man/en_US:/public/software/mpi/intelmpi/2017.4.239/man:/opt/gridview/pmix/share/pmix:/opt/gridview/slurm/share/man:/opt/gridview/munge/share/man:/opt/gridview/clusquota//man:
+CESM_CASES=/public/home/chengxl/cesm/cases/FHIST_SH/
+I_MPI_DAPL_UD_ACK_SEND_POOL_SIZE=8704
+I_MPI_DAPL_UD=1
+XDG_SESSION_ID=21966
+HOSTNAME=login02
+DAPL_UCM_CQ_SIZE=2000
+INTEL_LICENSE_FILE=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/licenses
+DAPL_UCM_RETRY=10
+SLURM_PMIX_DIRECT_CONN_UCX=false
+TERM=xterm
+SHELL=/bin/bash
+I_MPI_FABRICS=shm:dapl
+HISTSIZE=1000
+SSH_CLIENT=10.224.143.2 59344 22
+CONDA_SHLVL=0
+LIBRARY_PATH=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/compiler/lib/intel64_lin:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/lib/intel64_lin:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/tbb/lib/intel64_lin
+JASPERINC=/public/software/mathlib/libs-intel/jasper/1.900.1/include
+PERL5LIB=/public/home/chengxl/perl5/lib/perl5:
+OMP_STACKSIZE=256M
+PYTHONUNBUFFERED=1
+FPATH=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/include
+I_MPI_LARGE_SCALE_THRESHOLD=8192
+DAPL_UCM_DREP_TIME=200
+I_MPI_DAPL_UD_ACK_RECV_POOL_SIZE=8704
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+PERL_MB_OPT=--install_base /public/home/chengxl/perl5
+SSH_TTY=/dev/pts/31
+CLUSCONF_HOME=/opt/clusconf
+QT_GRAPHICSSYSTEM_CHECKED=1
+HISTORY_FILE=/var/log/user-log/user.log
+USER=chengxl
+LD_LIBRARY_PATH=/public/software/apps/ncl_ncarg/ncl662/lib:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/compiler/lib/intel64_lin:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/lib/intel64_lin:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/tbb/lib/intel64_lin:/public/software/apps/anaconda3/5.3.0/lib:/public/software/mathlib/libs-intel/libpng/1.2.12/lib:/public/software/mathlib/libs-intel/zlib/1.2.11/lib:/public/software/mathlib/libs-intel/pnetcdf/1.12.1/lib:/public/software/mathlib/libs-intel/jpeg-9a/lib:/public/software/mathlib/libs-intel/jasper/1.900.1/lib:/public/software/mathlib/libs-intel/hdf5/1.8.20/lib:/public/software/mathlib/libs-intel/udunits/2.2.28/lib:/public/software/mathlib/libs-intel/netcdf/4.4.1/lib:/public/software/mpi/intelmpi/2017.4.239/intel64/lib:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/compiler/lib/intel64_lin/:/opt/gridview/pmix/lib:/opt/gridview/slurm/lib:/opt/gridview/slurm/lib64:/opt/gridview/munge/lib
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+CPATH=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/include
+data=/data/chengxl
+CESM_HOME=/public/home/chengxl/cesm
+NLSPATH=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/compiler/lib/intel64_lin/locale/%l_%t/%N:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/lib/intel64_lin/locale/%l_%t/%N
+NFSCONF=/opt/clusconf/etc/nfs.cfg
+MAIL=/var/spool/mail/chengxl
+PATH=/public/software/apps/ncl_ncarg/ncl662/bin:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/bin/intel64:/public/software/apps/anaconda3/5.3.0/bin:/public/software/mathlib/libs-intel/cdo-1.9.10/bin:/public/software/mathlib/libs-intel/libpng/1.2.12/bin:/public/software/mathlib/libs-intel/pnetcdf/1.12.1/bin:/public/software/mathlib/libs-intel/jpeg-9a/bin:/public/software/mathlib/libs-intel/jasper/1.900.1/bin:/public/software/mathlib/libs-intel/hdf5/1.8.20/bin:/public/software/apps/ncview-2.1.7/intel/bin:/public/software/mathlib/libs-intel/netcdf/4.4.1/bin:/public/software/mpi/intelmpi/2017.4.239/intel64/bin:/usr/lib64/qt-3.3/bin:/opt/gridview/pmix/bin:/opt/gridview/pmix/sbin:/public/home/chengxl/perl5/bin:/opt/gridview/slurm/bin:/opt/gridview/slurm/sbin:/opt/gridview/munge/bin:/opt/gridview/munge/sbin:/opt/gridview/clusquota//bin:/opt/gridview/clusquota//sbin:/opt/clusconf/sbin:/opt/clusconf/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/public/home/chengxl/.local/bin:/public/home/chengxl/bin
+RUNLEVEL=3
+TBBROOT=/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/tbb
+JASPERLIB=/public/software/mathlib/libs-intel/jasper/1.900.1/lib
+C_INCLUDE_PATH=/opt/gridview/pmix/include:/opt/gridview/slurm/include:/opt/gridview/munge/include
+PWD=/public/home/chengxl/cesm/cases/FHIST_example
+NCARG_ROOT=/public/software/apps/ncl_ncarg/ncl662
+PNETCDF=/public/software/mathlib/libs-intel/pnetcdf/1.12.1
+_LMFILES_=/public/software/modules/mpi/intelmpi/2017.4.239:/public/software/modules/mathlib/netcdf/intel/4.4.1:/public/software/modules/apps/ncview/intel/2.1.7:/public/software/modules/mathlib/hdf5/intel/1.8.20:/public/software/modules/mathlib/jasper/intel/1.900.1:/public/software/modules/mathlib/jpeg/intel/9a:/public/software/modules/mathlib/pnetcdf/intel/1.12.1:/public/software/modules/mathlib/zlib/intel/1.2.11:/public/software/modules/mathlib/libpng/intel/1.2.12:/public/software/modules/mathlib/cdo/intel/1.10.19:/public/software/modules/apps/anaconda3/5.3.0:/opt/hpc/software/modules/compiler/intel/2017.5.239:/public/software/modules/apps/ncl_ncarg/6.6.2
+HDF5=/public/software/mathlib/libs-intel/hdf5/1.8.20/
+IPMICONF=/opt/clusconf/etc/ipmi.cfg
+LOG_HOME=/var/log/user-log
+LANG=en_US.UTF-8
+MODULEPATH=/public/software/modules:/opt/hpc/software/modules
+CIMEROOT=/public/home/chengxl/cesm/cime/scripts/Tools/../..
+LOADEDMODULES=mpi/intelmpi/2017.4.239:mathlib/netcdf/intel/4.4.1:apps/ncview/intel/2.1.7:mathlib/hdf5/intel/1.8.20:mathlib/jasper/intel/1.900.1:mathlib/jpeg/intel/9a:mathlib/pnetcdf/intel/1.12.1:mathlib/zlib/intel/1.2.11:mathlib/libpng/intel/1.2.12:mathlib/cdo/intel/1.10.19:apps/anaconda3/5.3.0:compiler/intel/2017.5.239:apps/ncl_ncarg/6.6.2
+SLURM_PMIX_TIMEOUT=3000
+KDEDIRS=/usr
+AUTOCLUSCONF=/opt/clusconf/etc/autoconf.cfg
+QT_QPA_PLATFORM=offscreen
+cesmexe=/data/chengxl/cesm/cimeoutput/FHIST_SH/run
+DAPL_UCM_WAIT_TIME=10000
+SLURM_HOME=/opt/gridview/slurm
+HISTCONTROL=ignoredups
+I_MPI_DAPL_UD_RNDV_EP_NUM=2
+home=/public/home/chengxl
+SHLVL=3
+HOME=/public/home/chengxl
+DAPL_UCM_REP_TIME=8000
+SLURM_PMIX_DIRECT_CONN=true
+NETCDF=/public/software/mathlib/libs-intel/netcdf/4.4.1
+PERL_LOCAL_LIB_ROOT=:/public/home/chengxl/perl5
+USER_ACTION=chengxl(10.224.143.2)
+LOGNAME=chengxl
+NETCDF_PATH=/public/software/mathlib/libs-intel/netcdf/4.4.1
+QTLIB=/usr/lib64/qt-3.3/lib
+STARTWAITTIME=300
+XDG_DATA_DIRS=/public/home/chengxl/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+SSH_CONNECTION=10.224.143.2 59344 10.64.100.100 22
+camphy=/public/home/chengxl/cesm/components/cam/src/physics/cam
+MODULESHOME=/usr/share/Modules
+OMP_NUM_THREADS=1
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+PMIX_HOME=/opt/gridview/pmix
+PROMPT_COMMAND={ date "+[%F %T `hostname` `whoami`] `history 1 | { read x cmd; echo " -> $USER_ACTION   $cmd";}`"; }>> $HISTORY_FILE
+I_MPI_DAPL_UD_RDMA_MIXED=1
+DAPL_UCM_QP_SIZE=2000
+MUNGE_HOME=/opt/gridview/munge
+XDG_RUNTIME_DIR=
+DISPLAY=localhost:28.0
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+INCLUDE=/public/software/apps/ncl_ncarg/ncl662/include:/opt/hpc/software/compiler/intel/intel-compiler-2017.5.239/mkl/include:/public/software/apps/anaconda3/5.3.0/include:/public/software/mathlib/libs-intel/libpng/1.2.12/include:/public/software/mathlib/libs-intel/zlib/1.2.11/include:/public/software/mathlib/libs-intel/pnetcdf/1.12.1/include:/public/software/mathlib/libs-intel/jpeg-9a/include:/public/software/mathlib/libs-intel/jasper/1.900.1/include:/public/software/mathlib/libs-intel/hdf5/1.8.20/include:/public/software/mathlib/libs-intel/netcdf/4.4.1/include:/public/software/mpi/intelmpi/2017.4.239/intel64/include
+PERL_MM_OPT=INSTALL_BASE=/public/home/chengxl/perl5
+I_MPI_ROOT=/public/software/mpi/intelmpi/2017.4.239
+DAPL_UCM_DREQ_RETRY=4
+SLURM_PMIX_DIRECT_CONN_EARLY=false
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+_=/usr/bin/env

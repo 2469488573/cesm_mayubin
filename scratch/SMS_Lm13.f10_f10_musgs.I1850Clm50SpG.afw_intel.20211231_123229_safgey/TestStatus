@@ -1,0 +1,3 @@
+PASS SMS_Lm13.f10_f10_musgs.I1850Clm50SpG.afw_intel CREATE_NEWCASE
+PASS SMS_Lm13.f10_f10_musgs.I1850Clm50SpG.afw_intel XML
+FAIL SMS_Lm13.f10_f10_musgs.I1850Clm50SpG.afw_intel SETUP

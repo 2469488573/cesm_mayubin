@@ -1,0 +1,3 @@
+domain1 = /data/chengxl/cesm/data_input/atm/cam/ocnfrac/domain.camocn.1.9x2.5_gx1v6_090403.nc
+file1 = /data/chengxl/cesm/data_input/atm/cam/sst/sst_HadOIBl_bc_1.9x2.5_1850_2017_c180507.nc
+domainfile = /data/chengxl/cesm/data_input/share/domains/domain.ocn.1.9x2.5_gx1v6_090403.nc

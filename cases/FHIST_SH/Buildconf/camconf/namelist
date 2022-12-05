@@ -1,0 +1,25 @@
+&comp_inparm 
+
+ dtime = 1800
+ start_ymd = 20000101
+
+
+
+
+avgflag_pertape = 'A','I'
+
+
+
+nhtfrq = 0,1 
+
+mfilt  =12, 480 !meige wenjiande shijianceng                                                                              
+
+fincl2 = 'pbl_h','pbl_h_dp','PBLH','n_l','f_canshu','f_star','tau_star','t_surface','n_pinglv'
+
+
+
+
+
+
+
+/ 

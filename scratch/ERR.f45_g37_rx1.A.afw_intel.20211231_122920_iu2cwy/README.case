@@ -1,0 +1,44 @@
+2021-12-31 12:29:42: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERR.f45_g37_rx1.A.afw_intel.20211231_122920_iu2cwy --res f45_g37_rx1 --compset A --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --walltime 00:30:00
+ ---------------------------------------------------
+2021-12-31 12:29:42: Compset longname is 2000_DATM%NYF_SLND_DICE%SSMI_DOCN%DOM_DROF%NYF_SGLC_SWAV
+ ---------------------------------------------------
+2021-12-31 12:29:42: Compset specification file is /public/home/chengxl/cesm/cime/src/drivers/mct/cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:29:42: Pes     specification file is /public/home/chengxl/cesm/cime/src/drivers/mct/cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:29:42: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:29:42: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ATM is  Data driven ATM COREv2 normal year forcing
+ ---------------------------------------------------
+2021-12-31 12:29:42: ATM_GRID is 4x5
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component LND is Stub land component
+ ---------------------------------------------------
+2021-12-31 12:29:42: LND_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ICE is dice mode is ssmi
+ ---------------------------------------------------
+2021-12-31 12:29:42: ICE_GRID is gx3v7
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component OCN is DOCN   prescribed ocean mode
+ ---------------------------------------------------
+2021-12-31 12:29:42: OCN_GRID is gx3v7
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ROF is Data runoff modelCOREv2 normal year forcing:
+ ---------------------------------------------------
+2021-12-31 12:29:42: ROF_GRID is rx1
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-12-31 12:29:42: GLC_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:29:42: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:42: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:29:47: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

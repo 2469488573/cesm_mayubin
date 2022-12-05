@@ -1,0 +1,63 @@
+2021-12-31 12:44:39: CREATE_NEWCASE FAILED for test 'SMS_D_Ln9.f09_f09_mg17.FWHIST.afw_intel.cam-reduced_hist3s'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_D_Ln9.f09_f09_mg17.FWHIST.afw_intel.cam-reduced_hist3s.20211231_124358_wv50is --res f09_f09_mg17 --compset FWHIST --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/reduced_hist3s --walltime 00:20:00
+Output: Compset longname is HIST_CAM60%WCTS_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_compsets.xml
+Compset forcing is Historic transient 
+ATM component is CAM cam6 physics:WACCM with tropospheric, stratospheric, mesospheric, and lower thermospheric chemistry:
+LND component is clm5.0:Satellite phenology:
+ICE component is Sea ICE (cice) model version 5 :prescribed cice
+OCN component is DOCN   prescribed ocean mode
+ROF component is MOSART: MOdel for Scale Adaptive River Transport
+GLC component is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+WAV component is Stub wave component
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_pes.xml
+Compset specific settings: name is RUN_STARTDATE and value is 1979-01-01
+Compset specific settings: name is SSTICE_DATA_FILENAME and value is $DIN_LOC_ROOT/atm/cam/sst/sst_HadOIBl_bc_0.9x1.25_1850_2017_c180507.nc
+Compset specific settings: name is SSTICE_GRID_FILENAME and value is $DIN_LOC_ROOT/share/domains/domain.ocn.fv0.9x1.25_gx1v7.151020.nc
+Compset specific settings: name is SSTICE_YEAR_END and value is 2016
+Compset specific settings: name is RUN_TYPE and value is hybrid
+Compset specific settings: name is RUN_REFCASE and value is f.e21.FWHIST.f09_f09_mg17.cesm2.1-exp011.001_v2
+Compset specific settings: name is RUN_REFDATE and value is 1979-01-01
+Compset specific settings: name is RUN_REFDIR and value is cesm2_init
+Machine is afw
+Pes setting: grid match    is a%0.9x1.25 
+Pes setting: grid          is a%0.9x1.25_l%0.9x1.25_oi%0.9x1.25_r%r05_g%gland4_w%null_m%gx1v7 
+Pes setting: compset       is HIST_CAM60%WCTS_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV 
+Pes setting: tasks       is {'NTASKS_ATM': -4, 'NTASKS_ICE': -4, 'NTASKS_CPL': -4, 'NTASKS_LND': -4, 'NTASKS_WAV': -4, 'NTASKS_ROF': -4, 'NTASKS_OCN': -4, 'NTASKS_GLC': -4} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': 0, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: HIST_CAM60%WCTS_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV 
+ Grid is: a%0.9x1.25_l%0.9x1.25_oi%0.9x1.25_r%r05_g%gland4_w%null_m%gx1v7 
+ Components in compset are: ['cam', 'clm', 'cice', 'docn', 'mosart', 'cism', 'swav', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+Traceback (most recent call last):
+  File "/public/home/chengxl/cesm/cime/scripts/create_newcase", line 218, in <module>
+    _main_func(__doc__)
+  File "/public/home/chengxl/cesm/cime/scripts/create_newcase", line 213, in _main_func
+    input_dir=input_dir, driver=driver, workflowid=workflow)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 1448, in create
+    input_dir=input_dir, driver=driver, workflowid=workflowid)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 928, in configure
+    self.set_model_version(model)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 1281, in set_model_version
+    srcroot = self.get_value("SRCROOT")
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 284, in get_value
+    result = env_file.get_value(item, attribute, resolved=False, subgroup=subgroup)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/XML/env_base.py", line 133, in get_value
+    vid, comp, iscompvar = self.check_if_comp_var(vid, attribute)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/XML/env_base.py", line 101, in check_if_comp_var
+    logger.debug("vid {} is not a compvar".format(vid))
+  File "/usr/lib64/python2.7/logging/__init__.py", line 1136, in debug
+    if self.isEnabledFor(DEBUG):
+  File "/usr/lib64/python2.7/logging/__init__.py", line 1348, in isEnabledFor
+    return level >= self.getEffectiveLevel()
+  File "/usr/lib64/python2.7/logging/__init__.py", line 1328, in getEffectiveLevel
+    def getEffectiveLevel(self):
+KeyboardInterrupt
+
+ ---------------------------------------------------

@@ -1,0 +1,52 @@
+2021-12-31 12:45:39: CREATE_NEWCASE PASSED for test 'SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s.20211231_124501_6q5wuo --res T42_T42 --compset FSCAM --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/scam_mpace_outfrq9s
+Output: Compset longname is 2000_CAM60%SCAM_CLM50%SP_CICE%PRES_DOCN%DOM_SROF_SGLC_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_compsets.xml
+Compset forcing is 1972-2004
+ATM component is CAM cam6 physics:
+LND component is clm5.0:Satellite phenology:
+ICE component is Sea ICE (cice) model version 5 :prescribed cice
+OCN component is DOCN   prescribed ocean mode
+ROF component is Stub river component
+GLC component is Stub glacier (land ice) component
+WAV component is Stub wave component
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_pes.xml
+Compset specific settings: name is RUN_STARTDATE and value is 1997-06-18
+Compset specific settings: name is START_TOD and value is 84585
+Compset specific settings: name is SSTICE_DATA_FILENAME and value is $DIN_LOC_ROOT/atm/cam/sst/sst_HadOIBl_bc_1x1_2000climo_c180511.nc
+Compset specific settings: name is PTS_MODE and value is TRUE
+Compset specific settings: name is PTS_LAT and value is 36.6
+Compset specific settings: name is PTS_LON and value is 262.5
+Machine is afw
+Pes setting: grid          is a%T42_l%T42_oi%T42_r%null_g%null_w%null_m%gx1v7 
+Pes setting: compset       is 2000_CAM60%SCAM_CLM50%SP_CICE%PRES_DOCN%DOM_SROF_SGLC_SWAV 
+Pes setting: tasks       is {'NTASKS_ATM': -1, 'NTASKS_ICE': -1, 'NTASKS_CPL': -1, 'NTASKS_LND': -1, 'NTASKS_WAV': -1, 'NTASKS_ROF': -1, 'NTASKS_OCN': -1, 'NTASKS_GLC': -1} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': 0, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: 2000_CAM60%SCAM_CLM50%SP_CICE%PRES_DOCN%DOM_SROF_SGLC_SWAV 
+ Grid is: a%T42_l%T42_oi%T42_r%null_g%null_w%null_m%gx1v7 
+ Components in compset are: ['cam', 'clm', 'cice', 'docn', 'srof', 'sglc', 'swav', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s.20211231_124501_6q5wuo
+This component includes user_mods /public/home/chengxl/cesm/components/cam//cime_config/usermods_dirs/scam_mandatory
+Adding user mods directory /public/home/chengxl/cesm/components/cam/cime_config/usermods_dirs/scam_mandatory
+RUN: /public/home/chengxl/cesm/scratch/SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s.20211231_124501_6q5wuo/shell_commands
+Adding user mods directory /public/home/chengxl/cesm/components/cam/cime_config/testdefs/testmods_dirs/cam/scam_mpace_outfrq9s
+Adding user mods directory /public/home/chengxl/cesm/components/cam/cime_config/usermods_dirs/scam_mpace
+RUN: /public/home/chengxl/cesm/scratch/SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s.20211231_124501_6q5wuo/shell_commands
+
+
+ ---------------------------------------------------
+2021-12-31 12:45:42: SETUP FAILED for test 'SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+
+ ---------------------------------------------------

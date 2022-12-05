@@ -1,0 +1,3 @@
+PASS ERS_Ld3.f09_g17.BWSSP585cmip6.afw_intel.allactive-defaultio_min CREATE_NEWCASE
+PASS ERS_Ld3.f09_g17.BWSSP585cmip6.afw_intel.allactive-defaultio_min XML
+FAIL ERS_Ld3.f09_g17.BWSSP585cmip6.afw_intel.allactive-defaultio_min SETUP

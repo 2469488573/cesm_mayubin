@@ -1,0 +1,3 @@
+PASS SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default CREATE_NEWCASE
+PASS SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default XML
+FAIL SMS_D_Ld3.f10_f10_musgs.I1850Clm50BgcCrop.afw_intel.clm-default SETUP

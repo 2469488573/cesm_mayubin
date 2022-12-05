@@ -1,0 +1,13 @@
+&modelio
+  diri = "/data/chengxl/cesm/cimeoutput/FHIST_SH/bld/esp"
+  diro = "/data/chengxl/cesm/cimeoutput/FHIST_SH/run"
+  logfile = "esp.log.221031-181156"
+/
+&pio_inparm
+  pio_netcdf_format = ""
+  pio_numiotasks = -99
+  pio_rearranger = -99
+  pio_root = -99
+  pio_stride = -99
+  pio_typename = "nothing"
+/

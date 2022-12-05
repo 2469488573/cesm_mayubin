@@ -1,0 +1,49 @@
+2021-12-31 12:29:25: CREATE_NEWCASE PASSED for test 'ERS_Ld5.f09_g17.B1850_BPRP.afw_intel.allactive-defaultio_min'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_Ld5.f09_g17.B1850_BPRP.afw_intel.allactive-defaultio_min.20211231_122920_iu2cwy --res f09_g17 --compset B1850_BPRP --test --machine afw --compiler intel --project none  --user-mods-dir /public/home/chengxl/cesm/cime/../cime_config/testmods_dirs/allactive/defaultio_min --walltime  01:00:00 
+Output: Compset longname is 1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BPRP
+Compset specification file is /public/home/chengxl/cesm/cime/../cime_config/config_compsets.xml
+Compset forcing is 1850
+Com forcing is Biogeochemistry intercomponent  with prognostic CO2 
+ATM component is CAM cam6 physics:
+LND component is clm5.0:BGC (vert. resol. CN and methane) with prognostic crop:
+ICE component is Sea ICE (cice) model version 5
+OCN component is POP2 EcosystemAbiotic DIC/DIC14
+ROF component is MOSART: MOdel for Scale Adaptive River Transport
+GLC component is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+WAV component is Wave Watch
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../cime_config/config_pes.xml
+Compset specific settings: name is RUN_STARTDATE and value is 0001-01-01
+Compset specific settings: name is RUN_REFDATE and value is 0081-01-01
+Compset specific settings: name is RUN_TYPE and value is hybrid
+Compset specific settings: name is RUN_REFCASE and value is b.e21.B1850_BPRP.f09_g17.CMIP6-piControl.tst.004
+Compset specific settings: name is RUN_REFDIR and value is cesm2_init
+Compset specific settings: name is CLM_NAMELIST_OPTS and value is use_init_interp=.true.
+Machine is afw
+Pes setting: grid match    is a%0.9x1.25.+l%0.9x1.25.+oi%gx1 
+Pes setting: grid          is a%0.9x1.25_l%0.9x1.25_oi%gx1v7_r%r05_g%gland4_w%ww3a_m%gx1v7 
+Pes setting: compset       is 1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BPRP 
+Pes setting: tasks       is {'NTASKS_ATM': -8, 'NTASKS_ICE': -4, 'NTASKS_CPL': -8, 'NTASKS_LND': -4, 'NTASKS_WAV': -8, 'NTASKS_ROF': -4, 'NTASKS_OCN': -1, 'NTASKS_GLC': -8} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': -8, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': -4, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: 1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BPRP 
+ Grid is: a%0.9x1.25_l%0.9x1.25_oi%gx1v7_r%r05_g%gland4_w%ww3a_m%gx1v7 
+ Components in compset are: ['cam', 'clm', 'cice', 'pop', 'mosart', 'cism', 'ww3', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/ERS_Ld5.f09_g17.B1850_BPRP.afw_intel.allactive-defaultio_min.20211231_122920_iu2cwy
+Adding user mods directory /public/home/chengxl/cesm/cime_config/testmods_dirs/allactive/defaultio_min
+
+
+ ---------------------------------------------------
+2021-12-31 12:29:30: SETUP FAILED for test 'ERS_Ld5.f09_g17.B1850_BPRP.afw_intel.allactive-defaultio_min'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/inputdata
+
+ ---------------------------------------------------

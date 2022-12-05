@@ -1,0 +1,3 @@
+PASS ERS_IOP.T62_g16.GIAF.afw_intel.pop-default CREATE_NEWCASE
+PASS ERS_IOP.T62_g16.GIAF.afw_intel.pop-default XML
+FAIL ERS_IOP.T62_g16.GIAF.afw_intel.pop-default SETUP

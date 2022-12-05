@@ -1,0 +1,5 @@
+#!/bin/bash
+
+./xmlchange --force CLM_BLDNML_OPTS="-fire_emis" --append
+./xmlchange --force BFBFLAG="TRUE"
+

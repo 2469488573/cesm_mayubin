@@ -1,0 +1,3 @@
+PASS SMS_D_Ld1_Mmpi-serial.f45_f45_mg37.I2000Clm50SpGs.afw_intel.clm-ptsRLA CREATE_NEWCASE
+PASS SMS_D_Ld1_Mmpi-serial.f45_f45_mg37.I2000Clm50SpGs.afw_intel.clm-ptsRLA XML
+FAIL SMS_D_Ld1_Mmpi-serial.f45_f45_mg37.I2000Clm50SpGs.afw_intel.clm-ptsRLA SETUP

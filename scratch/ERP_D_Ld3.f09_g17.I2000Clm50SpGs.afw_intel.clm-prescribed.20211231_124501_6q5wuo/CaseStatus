@@ -1,0 +1,9 @@
+2021-12-31 12:45:55: xmlchange success <command> ./xmlchange --force CLM_BLDNML_OPTS=-fire_emis --append  </command>
+ ---------------------------------------------------
+2021-12-31 12:45:56: xmlchange success <command> ./xmlchange --force BFBFLAG=TRUE  </command>
+ ---------------------------------------------------
+2021-12-31 12:45:58: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:45:58: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+ ---------------------------------------------------

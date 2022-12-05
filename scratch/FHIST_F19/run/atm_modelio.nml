@@ -1,0 +1,13 @@
+&modelio
+  diri = "/public/home/chengxl/cesm/scratch/FHIST_F19/bld/atm"
+  diro = "/public/home/chengxl/cesm/scratch/FHIST_F19/run"
+  logfile = "atm.log.220102-002539"
+/
+&pio_inparm
+  pio_netcdf_format = "64bit_offset"
+  pio_numiotasks = -99
+  pio_rearranger = 1
+  pio_root = 1
+  pio_stride = 8
+  pio_typename = "pnetcdf"
+/

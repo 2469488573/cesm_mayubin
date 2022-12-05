@@ -1,0 +1,3 @@
+PASS NCK.f19_g17.B1850.afw_intel.allactive-defaultiomi CREATE_NEWCASE
+PASS NCK.f19_g17.B1850.afw_intel.allactive-defaultiomi XML
+FAIL NCK.f19_g17.B1850.afw_intel.allactive-defaultiomi SETUP

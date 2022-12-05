@@ -1,0 +1,44 @@
+2021-12-31 12:29:42: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_Ld3.f19_g16.X.afw_intel.20211231_122920_iu2cwy --res f19_g16 --compset X --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --walltime 00:30:00
+ ---------------------------------------------------
+2021-12-31 12:29:42: Compset longname is 2000_XATM_XLND_XICE_XOCN_XROF_XGLC_XWAV
+ ---------------------------------------------------
+2021-12-31 12:29:42: Compset specification file is /public/home/chengxl/cesm/cime/src/drivers/mct/cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:29:42: Pes     specification file is /public/home/chengxl/cesm/cime/src/drivers/mct/cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:29:42: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:29:42: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ATM is Dead atm component
+ ---------------------------------------------------
+2021-12-31 12:29:42: ATM_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component LND is Dead land component
+ ---------------------------------------------------
+2021-12-31 12:29:42: LND_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ICE is Dead ice component
+ ---------------------------------------------------
+2021-12-31 12:29:42: ICE_GRID is gx1v6
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component OCN is Dead ocean component
+ ---------------------------------------------------
+2021-12-31 12:29:42: OCN_GRID is gx1v6
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component ROF is Dead river component
+ ---------------------------------------------------
+2021-12-31 12:29:42: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component GLC is Dead land-ice component
+ ---------------------------------------------------
+2021-12-31 12:29:42: GLC_GRID is gland4
+ ---------------------------------------------------
+2021-12-31 12:29:42: Component WAV is Dead wave component
+ ---------------------------------------------------
+2021-12-31 12:29:42: WAV_GRID is ww3a
+ ---------------------------------------------------
+2021-12-31 12:29:42: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:29:48: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

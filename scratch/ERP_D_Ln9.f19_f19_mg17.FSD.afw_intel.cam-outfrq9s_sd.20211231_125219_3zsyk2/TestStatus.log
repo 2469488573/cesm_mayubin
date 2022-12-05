@@ -1,0 +1,48 @@
+2021-12-31 12:52:59: CREATE_NEWCASE PASSED for test 'ERP_D_Ln9.f19_f19_mg17.FSD.afw_intel.cam-outfrq9s_sd'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERP_D_Ln9.f19_f19_mg17.FSD.afw_intel.cam-outfrq9s_sd.20211231_125219_3zsyk2 --res f19_f19_mg17 --compset FSD --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/outfrq9s_sd --walltime 00:20:00
+Output: Compset longname is HIST_CAM60%SDYN_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_compsets.xml
+Compset forcing is Historic transient 
+ATM component is CAM cam6 physics:
+LND component is clm5.0:Satellite phenology:
+ICE component is Sea ICE (cice) model version 5 :prescribed cice
+OCN component is DOCN   prescribed ocean mode
+ROF component is MOSART: MOdel for Scale Adaptive River Transport
+GLC component is Stub glacier (land ice) component
+WAV component is Stub wave component
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_pes.xml
+Compset specific settings: name is RUN_STARTDATE and value is 2005-01-01
+Compset specific settings: name is CALENDAR and value is GREGORIAN
+Compset specific settings: name is SSTICE_DATA_FILENAME and value is $DIN_LOC_ROOT/atm/cam/sst/sst_HadOIBl_bc_1.9x2.5_1850_2017_c180507.nc
+Compset specific settings: name is SSTICE_GRID_FILENAME and value is $DIN_LOC_ROOT/atm/cam/ocnfrac/domain.camocn.1.9x2.5_gx1v6_090403.nc 
+Compset specific settings: name is SSTICE_YEAR_END and value is 2016
+Machine is afw
+Pes setting: grid match    is a%1.9x2.5 
+Pes setting: grid          is a%1.9x2.5_l%1.9x2.5_oi%1.9x2.5_r%r05_g%null_w%null_m%gx1v7 
+Pes setting: compset       is HIST_CAM60%SDYN_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV 
+Pes setting: tasks       is {'NTASKS_ATM': -2, 'NTASKS_ICE': -2, 'NTASKS_CPL': -2, 'NTASKS_LND': -2, 'NTASKS_WAV': -2, 'NTASKS_ROF': -2, 'NTASKS_OCN': -2, 'NTASKS_GLC': -2} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': 0, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: HIST_CAM60%SDYN_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV 
+ Grid is: a%1.9x2.5_l%1.9x2.5_oi%1.9x2.5_r%r05_g%null_w%null_m%gx1v7 
+ Components in compset are: ['cam', 'clm', 'cice', 'docn', 'mosart', 'sglc', 'swav', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/ERP_D_Ln9.f19_f19_mg17.FSD.afw_intel.cam-outfrq9s_sd.20211231_125219_3zsyk2
+Adding user mods directory /public/home/chengxl/cesm/components/cam/cime_config/testdefs/testmods_dirs/cam/outfrq9s_sd
+RUN: /public/home/chengxl/cesm/scratch/ERP_D_Ln9.f19_f19_mg17.FSD.afw_intel.cam-outfrq9s_sd.20211231_125219_3zsyk2/shell_commands
+
+
+ ---------------------------------------------------
+2021-12-31 12:53:06: SETUP FAILED for test 'ERP_D_Ln9.f19_f19_mg17.FSD.afw_intel.cam-outfrq9s_sd'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+
+ ---------------------------------------------------

@@ -1,0 +1,4 @@
+./xmlchange --force RUN_STARTDATE=2000-01-01
+./xmlchange --force CAM_CONFIG_OPTS="-phys cam6 -offline_dyn -nlev 32"
+./xmlchange --force ROF_NCPL=\$ATM_NCPL
+./xmlchange --force GLC_NCPL=\$ATM_NCPL

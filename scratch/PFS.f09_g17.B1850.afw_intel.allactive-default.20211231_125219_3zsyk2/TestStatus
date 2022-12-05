@@ -1,0 +1,3 @@
+PASS PFS.f09_g17.B1850.afw_intel.allactive-default CREATE_NEWCASE
+PASS PFS.f09_g17.B1850.afw_intel.allactive-default XML
+FAIL PFS.f09_g17.B1850.afw_intel.allactive-default SETUP

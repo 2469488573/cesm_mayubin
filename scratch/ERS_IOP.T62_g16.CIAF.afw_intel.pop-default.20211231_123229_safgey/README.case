@@ -1,0 +1,44 @@
+2021-12-31 12:33:52: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_IOP.T62_g16.CIAF.afw_intel.pop-default.20211231_123229_safgey --res T62_g16 --compset CIAF --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/pop//cime_config/testdefs/testmods_dirs/pop/default
+ ---------------------------------------------------
+2021-12-31 12:33:52: Compset longname is 2000_DATM%IAF_SLND_DICE%IAF_POP2_DROF%IAF_SGLC_WW3
+ ---------------------------------------------------
+2021-12-31 12:33:52: Compset specification file is /public/home/chengxl/cesm/components/pop//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:33:52: Pes     specification file is /public/home/chengxl/cesm/components/pop//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:33:52: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:33:52: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component ATM is  Data driven ATM COREv2 interannual forcing
+ ---------------------------------------------------
+2021-12-31 12:33:52: ATM_GRID is T62
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component LND is Stub land component
+ ---------------------------------------------------
+2021-12-31 12:33:52: LND_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component ICE is dice mode  is siaf
+ ---------------------------------------------------
+2021-12-31 12:33:52: ICE_GRID is gx1v6
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component OCN is POP2 
+ ---------------------------------------------------
+2021-12-31 12:33:52: OCN_GRID is gx1v6
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component ROF is Data runoff modelCOREv2 interannual year forcing:
+ ---------------------------------------------------
+2021-12-31 12:33:52: ROF_GRID is rx1
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-12-31 12:33:52: GLC_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:33:52: Component WAV is Wave Watch
+ ---------------------------------------------------
+2021-12-31 12:33:52: WAV_GRID is ww3a
+ ---------------------------------------------------
+2021-12-31 12:33:52: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:34:00: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

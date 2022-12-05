@@ -1,0 +1,19 @@
+2021-12-31 12:30:29: xmlchange success <command> ./xmlchange --force CLM_BLDNML_OPTS=-fire_emis --append  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:29: xmlchange success <command> ./xmlchange --force BFBFLAG=TRUE  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:30: xmlchange success <command> ./xmlchange --force DATM_CPLHIST_CASE=b.e20.B1850.f09_g17.pi_control.all.221.cplhist  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:31: xmlchange success <command> ./xmlchange --force DATM_CPLHIST_DIR=/glade/p/cesm/bgcwg_dev/forcing/b.e20.B1850.f09_g17.pi_control.all.221.cplhist/cpl/hist.mon  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:31: xmlchange success <command> ./xmlchange --force DATM_CPLHIST_YR_ALIGN=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:32: xmlchange success <command> ./xmlchange --force DATM_CPLHIST_YR_END=84  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:33: xmlchange success <command> ./xmlchange --force DATM_CPLHIST_YR_START=82  </command>
+ ---------------------------------------------------
+2021-12-31 12:30:35: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:30:35: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/inputdata
+ ---------------------------------------------------

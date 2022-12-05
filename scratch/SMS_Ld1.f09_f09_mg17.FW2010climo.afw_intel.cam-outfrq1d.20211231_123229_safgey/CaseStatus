@@ -1,0 +1,7 @@
+2021-12-31 12:33:16: xmlchange success <command> ./xmlchange --force ROF_NCPL=$ATM_NCPL  </command>
+ ---------------------------------------------------
+2021-12-31 12:33:23: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:33:23: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/inputdata
+ ---------------------------------------------------

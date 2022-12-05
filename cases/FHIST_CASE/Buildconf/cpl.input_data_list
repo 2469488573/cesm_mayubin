@@ -1,0 +1,6 @@
+glc2lnd_smapname = /data/chengxl/cesm/data_input/cpl/gridmaps/gland4km/map_gland4km_TO_fv1.9x2.5_aave.170429.nc
+lnd2rof_fmapname = /data/chengxl/cesm/data_input/lnd/clm2/mappingdata/maps/1.9x2.5/map_1.9x2.5_nomask_to_0.5x0.5_nomask_aave_da_c120522.nc
+glc2lnd_fmapname = /data/chengxl/cesm/data_input/cpl/gridmaps/gland4km/map_gland4km_TO_fv1.9x2.5_aave.170429.nc
+lnd2glc_fmapname = /data/chengxl/cesm/data_input/cpl/gridmaps/fv1.9x2.5/map_fv1.9x2.5_TO_gland4km_aave.170429.nc
+rof2lnd_fmapname = /data/chengxl/cesm/data_input/lnd/clm2/mappingdata/maps/1.9x2.5/map_0.5x0.5_nomask_to_1.9x2.5_nomask_aave_da_c120709.nc
+lnd2glc_smapname = /data/chengxl/cesm/data_input/cpl/gridmaps/fv1.9x2.5/map_fv1.9x2.5_TO_gland4km_blin.170429.nc

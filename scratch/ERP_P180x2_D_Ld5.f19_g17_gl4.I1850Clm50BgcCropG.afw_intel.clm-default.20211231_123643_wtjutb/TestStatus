@@ -1,0 +1,3 @@
+PASS ERP_P180x2_D_Ld5.f19_g17_gl4.I1850Clm50BgcCropG.afw_intel.clm-default CREATE_NEWCASE
+PASS ERP_P180x2_D_Ld5.f19_g17_gl4.I1850Clm50BgcCropG.afw_intel.clm-default XML
+FAIL ERP_P180x2_D_Ld5.f19_g17_gl4.I1850Clm50BgcCropG.afw_intel.clm-default SETUP

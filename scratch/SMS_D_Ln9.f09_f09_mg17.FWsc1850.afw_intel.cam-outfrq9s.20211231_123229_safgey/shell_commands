@@ -1,0 +1,2 @@
+./xmlchange --force ROF_NCPL=\$ATM_NCPL
+./xmlchange --force GLC_NCPL=\$ATM_NCPL

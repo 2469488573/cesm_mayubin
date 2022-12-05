@@ -1,0 +1,6 @@
+./xmlchange --force POP_TAVG_R8=TRUE
+# Set number of blocks to 80, use space curve
+./xmlchange --force --force POP_AUTO_DECOMP=FALSE
+./xmlchange --force --force POP_DECOMPTYPE=spacecurve
+./xmlchange --force --force POP_BLCKX=27,POP_BLCKY=32,POP_NX_BLOCKS=12,POP_NY_BLOCKS=12
+./xmlchange --force --force POP_MXBLCKS=5

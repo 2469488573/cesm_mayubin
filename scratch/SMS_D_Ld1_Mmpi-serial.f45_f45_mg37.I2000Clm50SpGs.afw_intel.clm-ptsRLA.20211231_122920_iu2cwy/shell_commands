@@ -1,0 +1,31 @@
+#!/bin/bash
+
+./xmlchange --force CLM_BLDNML_OPTS="-fire_emis" --append
+./xmlchange --force BFBFLAG="TRUE"
+
+./xmlchange --force PTS_MODE=TRUE
+./xmlchange --force ATM_NX=0
+./xmlchange --force ATM_NY=0
+./xmlchange --force LND_NX=0
+./xmlchange --force LND_NY=0
+./xmlchange --force ICE_NX=0
+./xmlchange --force ICE_NY=0
+./xmlchange --force OCN_NX=0
+./xmlchange --force OCN_NY=0
+./xmlchange --force ROF_NX=0
+./xmlchange --force ROF_NY=0
+./xmlchange --force GLC_NX=0
+./xmlchange --force GLC_NY=0
+./xmlchange --force WAV_NX=0
+./xmlchange --force WAV_NY=0
+./xmlchange --force NTASKS_ATM=1
+./xmlchange --force NTASKS_LND=1
+./xmlchange --force NTASKS_ICE=1
+./xmlchange --force NTASKS_OCN=1
+./xmlchange --force NTASKS_CPL=1
+./xmlchange --force NTASKS_GLC=1
+./xmlchange --force NTASKS_ROF=1
+./xmlchange --force NTASKS_WAV=1
+./xmlchange --force NTASKS_ESP=1
+./xmlchange --force PTS_LAT=42,PTS_LON=260
+./xmlchange --force --force CLM_FORCE_COLDSTART=on

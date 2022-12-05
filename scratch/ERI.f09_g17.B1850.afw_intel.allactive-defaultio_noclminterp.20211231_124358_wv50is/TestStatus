@@ -1,0 +1,3 @@
+PASS ERI.f09_g17.B1850.afw_intel.allactive-defaultio_noclminterp CREATE_NEWCASE
+PASS ERI.f09_g17.B1850.afw_intel.allactive-defaultio_noclminterp XML
+FAIL ERI.f09_g17.B1850.afw_intel.allactive-defaultio_noclminterp SETUP

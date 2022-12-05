@@ -1,0 +1,3 @@
+PASS SMS_D_Ln9.f09_f09_mg17.FWsc1850.afw_intel.cam-outfrq9s CREATE_NEWCASE
+PASS SMS_D_Ln9.f09_f09_mg17.FWsc1850.afw_intel.cam-outfrq9s XML
+FAIL SMS_D_Ln9.f09_f09_mg17.FWsc1850.afw_intel.cam-outfrq9s SETUP

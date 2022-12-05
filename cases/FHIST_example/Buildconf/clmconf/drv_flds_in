@@ -1,0 +1,14 @@
+&drydep_inparm
+/
+&megan_emis_nl
+/
+&fire_emis_nl
+/
+&carma_inparm
+/
+!#--------------------------------------------------------------------------------------------------------------------------
+!# drv_flds_in:: Comment:
+!# This namelist was created using the following command-line:
+!#     /public/home/chengxl/cesm/components/clm/bld/CLM build-namelist -cimeroot /public/home/chengxl/cesm/cime -infile /public/home/chengxl/cesm/cases/FHIST_example/Buildconf/clmconf/namelist -csmdata /data/chengxl/cesm/data_input -inputdata /public/home/chengxl/cesm/cases/FHIST_example/Buildconf/clm.input_data_list -ignore_ic_year -namelist &clm_inparm  start_ymd=19500101 /  -no-megan -use_case 20thC_transient -res 1.9x2.5 -clm_start_type default -envxml_dir /public/home/chengxl/cesm/cases/FHIST_example -l_ncpl 48 -lnd_frac /data/chengxl/cesm/data_input/share/domains/domain.lnd.fv1.9x2.5_gx1v6.090206.nc -glc_nec 10 -co2_ppmv 284.7 -co2_type diagnostic -config /public/home/chengxl/cesm/cases/FHIST_example/Buildconf/clmconf/config_cache.xml -bgc sp -clm_accelerated_spinup off -lnd_tuning_mode clm5_0_cam6.0 -mask gx1v6
+!# For help on options use: /public/home/chengxl/cesm/components/clm/bld/CLM build-namelist -help
+!#--------------------------------------------------------------------------------------------------------------------------

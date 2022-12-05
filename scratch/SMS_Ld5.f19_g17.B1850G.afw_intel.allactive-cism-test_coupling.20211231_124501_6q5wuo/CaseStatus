@@ -1,0 +1,7 @@
+2021-12-31 12:45:18: xmlchange success <command> ./xmlchange --force GLC_AVG_PERIOD=glc_coupling_period  </command>
+ ---------------------------------------------------
+2021-12-31 12:45:21: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:45:21: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+ ---------------------------------------------------

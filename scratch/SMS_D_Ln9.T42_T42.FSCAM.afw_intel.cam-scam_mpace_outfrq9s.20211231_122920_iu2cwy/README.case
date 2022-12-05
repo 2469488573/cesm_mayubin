@@ -1,0 +1,46 @@
+2021-12-31 12:29:52: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_D_Ln9.T42_T42.FSCAM.afw_intel.cam-scam_mpace_outfrq9s.20211231_122920_iu2cwy --res T42_T42 --compset FSCAM --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/scam_mpace_outfrq9s
+ ---------------------------------------------------
+2021-12-31 12:29:52: Compset longname is 2000_CAM60%SCAM_CLM50%SP_CICE%PRES_DOCN%DOM_SROF_SGLC_SWAV
+ ---------------------------------------------------
+2021-12-31 12:29:52: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:29:52: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:29:52: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:29:52: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component ATM is CAM cam6 physics:
+ ---------------------------------------------------
+2021-12-31 12:29:52: ATM_GRID is T42
+ ---------------------------------------------------
+2021-12-31 12:29:52: This component includes user_mods /public/home/chengxl/cesm/components/cam//cime_config/usermods_dirs/scam_mandatory
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component LND is clm5.0:Satellite phenology:
+ ---------------------------------------------------
+2021-12-31 12:29:52: LND_GRID is T42
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component ICE is Sea ICE (cice) model version 5 :prescribed cice
+ ---------------------------------------------------
+2021-12-31 12:29:52: ICE_GRID is T42
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component OCN is DOCN   prescribed ocean mode
+ ---------------------------------------------------
+2021-12-31 12:29:52: OCN_GRID is T42
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component ROF is Stub river component
+ ---------------------------------------------------
+2021-12-31 12:29:52: ROF_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-12-31 12:29:52: GLC_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:52: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:29:53: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:29:53: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:30:02: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

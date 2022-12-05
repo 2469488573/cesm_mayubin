@@ -1,0 +1,61 @@
+2021-12-31 12:53:29: xmlchange success <command> ./xmlchange --force CLM_BLDNML_OPTS=-fire_emis --append  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:29: xmlchange success <command> ./xmlchange --force BFBFLAG=TRUE  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:30: xmlchange success <command> ./xmlchange --force PTS_MODE=TRUE  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:30: xmlchange success <command> ./xmlchange --force ATM_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:31: xmlchange success <command> ./xmlchange --force ATM_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:32: xmlchange success <command> ./xmlchange --force LND_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:32: xmlchange success <command> ./xmlchange --force LND_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:33: xmlchange success <command> ./xmlchange --force ICE_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:34: xmlchange success <command> ./xmlchange --force ICE_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:34: xmlchange success <command> ./xmlchange --force OCN_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:35: xmlchange success <command> ./xmlchange --force OCN_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:36: xmlchange success <command> ./xmlchange --force ROF_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:36: xmlchange success <command> ./xmlchange --force ROF_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:37: xmlchange success <command> ./xmlchange --force GLC_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:37: xmlchange success <command> ./xmlchange --force GLC_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:38: xmlchange success <command> ./xmlchange --force WAV_NX=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:39: xmlchange success <command> ./xmlchange --force WAV_NY=0  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:39: xmlchange success <command> ./xmlchange --force NTASKS_ATM=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:40: xmlchange success <command> ./xmlchange --force NTASKS_LND=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:40: xmlchange success <command> ./xmlchange --force NTASKS_ICE=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:41: xmlchange success <command> ./xmlchange --force NTASKS_OCN=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:42: xmlchange success <command> ./xmlchange --force NTASKS_CPL=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:42: xmlchange success <command> ./xmlchange --force NTASKS_GLC=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:43: xmlchange success <command> ./xmlchange --force NTASKS_ROF=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:43: xmlchange success <command> ./xmlchange --force NTASKS_WAV=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:44: xmlchange success <command> ./xmlchange --force NTASKS_ESP=1  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:45: xmlchange success <command> ./xmlchange --force PTS_LAT=42,PTS_LON=260  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:45: xmlchange success <command> ./xmlchange --force --force CLM_FORCE_COLDSTART=on  </command>
+ ---------------------------------------------------
+2021-12-31 12:53:48: case.setup starting 
+ ---------------------------------------------------
+2021-12-31 12:53:48: case.setup error 
+ERROR: inputdata root is not a directory or is not readable: $/public/home/chengxl/cesm/data_input
+ ---------------------------------------------------

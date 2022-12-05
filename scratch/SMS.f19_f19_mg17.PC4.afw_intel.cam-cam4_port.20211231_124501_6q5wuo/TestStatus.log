@@ -1,0 +1,43 @@
+2021-12-31 12:45:46: CREATE_NEWCASE PASSED for test 'SMS.f19_f19_mg17.PC4.afw_intel.cam-cam4_port'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS.f19_f19_mg17.PC4.afw_intel.cam-cam4_port.20211231_124501_6q5wuo --res f19_f19_mg17 --compset PC4 --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/cam4_port --walltime 00:10:00
+Output: Compset longname is 2000_CAM40%PORT_SLND_SICE_SOCN_SROF_SGLC_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_compsets.xml
+Compset forcing is 1972-2004
+ATM component is CAM cam4 physics:CAM Parallel Offline Radiation Tool:
+LND component is Stub land component
+ICE component is Stub ice component
+OCN component is Stub ocn component
+ROF component is Stub river component
+GLC component is Stub glacier (land ice) component
+WAV component is Stub wave component
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_pes.xml
+Compset specific settings: name is SSTICE_DATA_FILENAME and value is $DIN_LOC_ROOT/atm/cam/sst/sst_HadOIBl_bc_1x1_2000climo_c180511.nc
+Machine is afw
+Pes setting: grid match    is a%1.9x2.5 
+Pes setting: grid          is a%1.9x2.5_l%null_oi%null_r%null_g%null_w%null_m%gx1v7 
+Pes setting: compset       is 2000_CAM40%PORT_SLND_SICE_SOCN_SROF_SGLC_SWAV 
+Pes setting: tasks       is {'NTASKS_ATM': -2, 'NTASKS_ICE': -2, 'NTASKS_CPL': -2, 'NTASKS_LND': -2, 'NTASKS_WAV': -2, 'NTASKS_ROF': -2, 'NTASKS_OCN': -2, 'NTASKS_GLC': -2} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_LND': 0, 'ROOTPE_ATM': 0, 'ROOTPE_ICE': 0, 'ROOTPE_WAV': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_GLC': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: none
+ Compset is: 2000_CAM40%PORT_SLND_SICE_SOCN_SROF_SGLC_SWAV 
+ Grid is: a%1.9x2.5_l%null_oi%null_r%null_g%null_w%null_m%gx1v7 
+ Components in compset are: ['cam', 'slnd', 'sice', 'socn', 'srof', 'sglc', 'swav', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/SMS.f19_f19_mg17.PC4.afw_intel.cam-cam4_port.20211231_124501_6q5wuo
+Adding user mods directory /public/home/chengxl/cesm/components/cam/cime_config/testdefs/testmods_dirs/cam/cam4_port
+
+
+ ---------------------------------------------------
+2021-12-31 12:45:51: SETUP FAILED for test 'SMS.f19_f19_mg17.PC4.afw_intel.cam-cam4_port'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/data_input
+
+ ---------------------------------------------------

@@ -1,0 +1,44 @@
+2021-12-31 12:52:58: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_Ln9.f19_f19_mg17.FSPCAMM.afw_intel.cam-outfrq9s.20211231_125219_3zsyk2 --res f19_f19_mg17 --compset FSPCAMM --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/outfrq9s --walltime 00:20:00
+ ---------------------------------------------------
+2021-12-31 12:52:58: Compset longname is 2000_CAM%SPCAMM_CLM50%SP_CICE%PRES_DOCN%DOM_RTM_SGLC_SWAV
+ ---------------------------------------------------
+2021-12-31 12:52:58: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:52:58: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:52:58: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-12-31 12:52:58: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component ATM is CAM simplified and non-versioned physics :CAM super-parameterized CAM double moment m2005 SAM microphysics 
+ ---------------------------------------------------
+2021-12-31 12:52:58: ATM_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component LND is clm5.0:Satellite phenology:
+ ---------------------------------------------------
+2021-12-31 12:52:58: LND_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component ICE is Sea ICE (cice) model version 5 :prescribed cice
+ ---------------------------------------------------
+2021-12-31 12:52:58: ICE_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component OCN is DOCN   prescribed ocean mode
+ ---------------------------------------------------
+2021-12-31 12:52:58: OCN_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component ROF is RTM: River Transport Model
+ ---------------------------------------------------
+2021-12-31 12:52:58: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-12-31 12:52:58: GLC_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:52:58: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-12-31 12:52:58: WAV_GRID is null
+ ---------------------------------------------------
+2021-12-31 12:52:58: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:53:06: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

@@ -1,0 +1,3 @@
+PASS ERP_P36x2_D_Ld5.f10_f10_musgs.I1850Clm45BgcCru.afw_intel.clm-ciso CREATE_NEWCASE
+PASS ERP_P36x2_D_Ld5.f10_f10_musgs.I1850Clm45BgcCru.afw_intel.clm-ciso XML
+FAIL ERP_P36x2_D_Ld5.f10_f10_musgs.I1850Clm45BgcCru.afw_intel.clm-ciso SETUP

@@ -1,0 +1,3 @@
+PASS NCK_Ld1.f10_f10_musgs.I2000Clm50Sp.afw_intel.clm-default CREATE_NEWCASE
+PASS NCK_Ld1.f10_f10_musgs.I2000Clm50Sp.afw_intel.clm-default XML
+FAIL NCK_Ld1.f10_f10_musgs.I2000Clm50Sp.afw_intel.clm-default SETUP

@@ -1,0 +1,46 @@
+2021-12-31 12:45:11: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_Ld7.f19_g17.B1850.afw_intel.allactive-defaultio.20211231_124501_6q5wuo --res f19_g17 --compset B1850 --test --machine afw --compiler intel --project none --output-root /public/home/chengxl/cesm/scratch --user-mods-dir /public/home/chengxl/cesm/cime/../cime_config/testmods_dirs/allactive/defaultio --walltime 00:30:00
+ ---------------------------------------------------
+2021-12-31 12:45:11: Compset longname is 1850_CAM60_CLM50%BGC-CROP_CICE_POP2%ECO%ABIO-DIC_MOSART_CISM2%NOEVOLVE_WW3_BGC%BDRD
+ ---------------------------------------------------
+2021-12-31 12:45:11: Compset specification file is /public/home/chengxl/cesm/cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:45:11: Pes     specification file is /public/home/chengxl/cesm/cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:45:11: Forcing is 1850
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component CPL is Biogeochemistry intercomponent  with diagnostic CO2
+ ---------------------------------------------------
+2021-12-31 12:45:11: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component ATM is CAM cam6 physics:
+ ---------------------------------------------------
+2021-12-31 12:45:11: ATM_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component LND is clm5.0:BGC (vert. resol. CN and methane) with prognostic crop:
+ ---------------------------------------------------
+2021-12-31 12:45:11: LND_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component ICE is Sea ICE (cice) model version 5
+ ---------------------------------------------------
+2021-12-31 12:45:11: ICE_GRID is gx1v7
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component OCN is POP2 EcosystemAbiotic DIC/DIC14
+ ---------------------------------------------------
+2021-12-31 12:45:11: OCN_GRID is gx1v7
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
+ ---------------------------------------------------
+2021-12-31 12:45:11: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+ ---------------------------------------------------
+2021-12-31 12:45:11: GLC_GRID is gland4
+ ---------------------------------------------------
+2021-12-31 12:45:11: Component WAV is Wave Watch
+ ---------------------------------------------------
+2021-12-31 12:45:11: WAV_GRID is ww3a
+ ---------------------------------------------------
+2021-12-31 12:45:11: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:45:14: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

@@ -1,0 +1,7 @@
+make -f /public/home/chengxl/cesm/cases/FHIST_F19/Tools/Makefile  -C /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/mct  CASEROOT=/public/home/chengxl/cesm/cases/FHIST_F19 MODEL=mct /public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/mct/Makefile.conf
+make: Entering directory `/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/mct'
+make: Leaving directory `/public/home/chengxl/cesm/scratch/FHIST_F19/bld/intel/intelmpi/nodebug/nothreads/mct'
+cat: Filepath: No such file or directory
+/public/home/chengxl/cesm/cases/FHIST_F19/Tools/Makefile:169: *** "NETCDF_C_PATH specified without NETCDF_FORTRAN_PATH".  Stop.
+ERROR: cat: Filepath: No such file or directory
+/public/home/chengxl/cesm/cases/FHIST_F19/Tools/Makefile:169: *** "NETCDF_C_PATH specified without NETCDF_FORTRAN_PATH".  Stop.

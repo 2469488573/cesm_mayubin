@@ -1,0 +1,56 @@
+2021-12-31 12:44:39: CREATE_NEWCASE FAILED for test 'ERS_Ln9.f19_f19_mg16.FX2000.afw_intel.cam-outfrq9s'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/ERS_Ln9.f19_f19_mg16.FX2000.afw_intel.cam-outfrq9s.20211231_124358_wv50is --res f19_f19_mg16 --compset FX2000 --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/cam//cime_config/testdefs/testmods_dirs/cam/outfrq9s --walltime 00:10:00
+Output: Compset longname is 2000_CAM40%WXIE_CLM40%SP_CICE%PRES_DOCN%DOM_RTM_SGLC_SWAV
+Compset specification file is /public/home/chengxl/cesm/cime/../components/cam//cime_config/config_compsets.xml
+Traceback (most recent call last):
+  File "/public/home/chengxl/cesm/cime/scripts/create_newcase", line 218, in <module>
+    _main_func(__doc__)
+  File "/public/home/chengxl/cesm/cime/scripts/create_newcase", line 213, in _main_func
+    input_dir=input_dir, driver=driver, workflowid=workflow)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 1448, in create
+    input_dir=input_dir, driver=driver, workflowid=workflowid)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 795, in configure
+    self._get_component_config_data(files)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/case/case.py", line 595, in _get_component_config_data
+    env_file.add_elements_by_group(files, attlist)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/XML/entry_id.py", line 359, in add_elements_by_group
+    node  = self.copy(src_node)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/XML/generic_xml.py", line 196, in copy
+    return deepcopy(node)
+  File "/usr/lib64/python2.7/copy.py", line 174, in deepcopy
+    y = copier(memo)
+  File "/public/home/chengxl/cesm/cime/scripts/Tools/../../scripts/lib/CIME/XML/generic_xml.py", line 34, in __deepcopy__
+    return _Element(deepcopy(self.xml_element))
+  File "/usr/lib64/python2.7/copy.py", line 190, in deepcopy
+    y = _reconstruct(x, rv, 1, memo)
+  File "/usr/lib64/python2.7/copy.py", line 334, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib64/python2.7/copy.py", line 163, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib64/python2.7/copy.py", line 257, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib64/python2.7/copy.py", line 163, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib64/python2.7/copy.py", line 230, in _deepcopy_list
+    y.append(deepcopy(a, memo))
+  File "/usr/lib64/python2.7/copy.py", line 190, in deepcopy
+    y = _reconstruct(x, rv, 1, memo)
+  File "/usr/lib64/python2.7/copy.py", line 334, in _reconstruct
+    state = deepcopy(state, memo)
+  File "/usr/lib64/python2.7/copy.py", line 163, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib64/python2.7/copy.py", line 257, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "/usr/lib64/python2.7/copy.py", line 163, in deepcopy
+    y = copier(x, memo)
+  File "/usr/lib64/python2.7/copy.py", line 230, in _deepcopy_list
+    y.append(deepcopy(a, memo))
+  File "/usr/lib64/python2.7/copy.py", line 190, in deepcopy
+    y = _reconstruct(x, rv, 1, memo)
+  File "/usr/lib64/python2.7/copy.py", line 328, in _reconstruct
+    args = deepcopy(args, memo)
+  File "/usr/lib64/python2.7/copy.py", line 163, in deepcopy
+    y = copier(x, memo)
+KeyboardInterrupt
+
+ ---------------------------------------------------

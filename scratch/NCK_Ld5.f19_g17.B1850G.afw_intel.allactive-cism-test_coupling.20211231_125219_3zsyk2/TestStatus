@@ -1,0 +1,3 @@
+PASS NCK_Ld5.f19_g17.B1850G.afw_intel.allactive-cism-test_coupling CREATE_NEWCASE
+PASS NCK_Ld5.f19_g17.B1850G.afw_intel.allactive-cism-test_coupling XML
+FAIL NCK_Ld5.f19_g17.B1850G.afw_intel.allactive-cism-test_coupling SETUP

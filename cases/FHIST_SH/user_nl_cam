@@ -1,0 +1,22 @@
+! Users should add all user specific namelist changes below in the form of 
+! namelist_var = new_namelist_value 
+
+!5ndays
+
+avgflag_pertape = 'A','I'
+! A ==> Average
+! B ==> GMT 00:00:00 average
+! I ==> Instantaneous
+! M ==> Minimum
+! X ==> Maximum
+
+nhtfrq = 0,1 
+! >0 shijianbuchang
+! <0 xiaoshishu 
+! =0 moren yuepingjun                                                                             
+mfilt  =12, 480 !meige wenjiande shijianceng                                                                              
+fincl2 = 'pbl_h','pbl_h_dp','PBLH','n_l','f_canshu','f_star','tau_star','t_surface','n_pinglv'
+
+!dierge wenjian baohan de bianliang 
+
+

@@ -1,0 +1,48 @@
+2021-12-31 12:36:47: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_D_Ln9.f19_g17.BWmaCO2x4cmip6.afw_intel.allactive-default.20211231_123643_wtjutb --res f19_g17 --compset BWmaCO2x4cmip6 --test --machine afw --compiler intel --project none --user-mods-dir /public/home/chengxl/cesm/cime/../cime_config/testmods_dirs/allactive/default --walltime 00:10:00
+ ---------------------------------------------------
+2021-12-31 12:36:47: Compset longname is 1850_CAM60%WCCM%4xCO2_CLM50%BGC-CROP-CMIP6WACCMDECK_CICE%CMIP6_POP2%ECO%NDEP_MOSART_CISM2%NOEVOLVE_WW3
+ ---------------------------------------------------
+2021-12-31 12:36:47: Compset specification file is /public/home/chengxl/cesm/cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-12-31 12:36:47: Pes     specification file is /public/home/chengxl/cesm/cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-12-31 12:36:47: Forcing is 1850
+ ---------------------------------------------------
+2021-12-31 12:36:47: Using None coupler instances
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component ATM is CAM cam6 physics:WACCM with middle atmosphere chemistry:abrupt quadrupling of CO2 with other forcings maintained at 1850 piControl levels (CMIP6 DECK abrupt4xCO2 experiment) :
+ ---------------------------------------------------
+2021-12-31 12:36:47: ATM_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component LND is clm5.0:BGC (vert. resol. CN and methane) with prognostic crop, with modifications appropriate for CMIP6 WACCM DECK experiments:
+ ---------------------------------------------------
+2021-12-31 12:36:47: LND_GRID is 1.9x2.5
+ ---------------------------------------------------
+2021-12-31 12:36:47: This component includes user_mods /public/home/chengxl/cesm/components/clm//cime_config/usermods_dirs/cmip6_waccm_nociso_deck
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component ICE is Sea ICE (cice) model version 5 :with modifications appropriate for CMIP6 experiments
+ ---------------------------------------------------
+2021-12-31 12:36:47: ICE_GRID is gx1v7
+ ---------------------------------------------------
+2021-12-31 12:36:47: This component includes user_mods /public/home/chengxl/cesm/components/cice/cime_config/usermods_dirs/cmip6
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component OCN is POP2 EcosystemNitrogen Deposition from Coupler
+ ---------------------------------------------------
+2021-12-31 12:36:47: OCN_GRID is gx1v7
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
+ ---------------------------------------------------
+2021-12-31 12:36:47: ROF_GRID is r05
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+ ---------------------------------------------------
+2021-12-31 12:36:47: GLC_GRID is gland4
+ ---------------------------------------------------
+2021-12-31 12:36:47: Component WAV is Wave Watch
+ ---------------------------------------------------
+2021-12-31 12:36:47: WAV_GRID is ww3a
+ ---------------------------------------------------
+2021-12-31 12:36:47: ESP_GRID is None
+ ---------------------------------------------------
+2021-12-31 12:36:52: Case Created using: ./create_test --xml-category prealpha --xml-machine cheyenne --xml-compiler intel --machine afw --compiler intel
+ ---------------------------------------------------

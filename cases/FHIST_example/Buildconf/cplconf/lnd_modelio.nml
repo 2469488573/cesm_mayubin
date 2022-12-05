@@ -1,0 +1,13 @@
+&modelio
+  diri = "/data/chengxl/cesm/cimeoutput/FHIST_example/bld/lnd"
+  diro = "/data/chengxl/cesm/cimeoutput/FHIST_example/run"
+  logfile = "lnd.log.221205-191908"
+/
+&pio_inparm
+  pio_netcdf_format = "64bit_offset"
+  pio_numiotasks = -99
+  pio_rearranger = 1
+  pio_root = 1
+  pio_stride = 64
+  pio_typename = "netcdf"
+/

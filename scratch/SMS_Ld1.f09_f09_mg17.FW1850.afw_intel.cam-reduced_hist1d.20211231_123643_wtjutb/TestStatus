@@ -1,0 +1,3 @@
+PASS SMS_Ld1.f09_f09_mg17.FW1850.afw_intel.cam-reduced_hist1d CREATE_NEWCASE
+PASS SMS_Ld1.f09_f09_mg17.FW1850.afw_intel.cam-reduced_hist1d XML
+FAIL SMS_Ld1.f09_f09_mg17.FW1850.afw_intel.cam-reduced_hist1d SETUP

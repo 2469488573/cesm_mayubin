@@ -1,0 +1,44 @@
+2021-12-31 12:30:44: CREATE_NEWCASE PASSED for test 'SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve'.
+Command: /public/home/chengxl/cesm/cime/scripts/create_newcase --case /public/home/chengxl/cesm/scratch/SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve.20211231_122920_iu2cwy --res T62_g17 --compset C --test --machine afw --compiler intel --project none  --output-root ${HOME}/cesm/scratch  --user-mods-dir /public/home/chengxl/cesm/cime/../components/pop//cime_config/testdefs/testmods_dirs/pop/144blocks_320x384_spacecurve --pecount 144
+Output: Compset longname is 2000_DATM%NYF_SLND_DICE%SSMI_POP2_DROF%NYF_SGLC_WW3
+Compset specification file is /public/home/chengxl/cesm/cime/../components/pop//cime_config/config_compsets.xml
+Compset forcing is 1972-2004
+ATM component is  Data driven ATM COREv2 normal year forcing
+LND component is Stub land component
+ICE component is dice mode is ssmi
+OCN component is POP2 
+ROF component is Data runoff modelCOREv2 normal year forcing:
+GLC component is Stub glacier (land ice) component
+WAV component is Wave Watch
+ESP component is 
+Pes     specification file is /public/home/chengxl/cesm/cime/../components/pop//cime_config/config_pes.xml
+Machine is afw
+Pes setting: compset_match is _DATM.*_POP2 
+Pes setting: grid          is a%T62_l%null_oi%gx1v7_r%rx1_g%null_w%ww3a_m%gx1v7 
+Pes setting: compset       is 2000_DATM%NYF_SLND_DICE%SSMI_POP2_DROF%NYF_SGLC_WW3 
+Pes setting: tasks       is {'NTASKS_ATM': -1, 'NTASKS_ICE': -1, 'NTASKS_CPL': -1, 'NTASKS_WAV': -1, 'NTASKS_LND': -1, 'NTASKS_ROF': -1, 'NTASKS_OCN': -1, 'NTASKS_GLC': -1} 
+Pes setting: threads     is {'NTHRDS_ICE': 1, 'NTHRDS_ATM': 1, 'NTHRDS_ROF': 1, 'NTHRDS_LND': 1, 'NTHRDS_WAV': 1, 'NTHRDS_OCN': 1, 'NTHRDS_CPL': 1, 'NTHRDS_GLC': 1} 
+Pes setting: rootpe      is {'ROOTPE_OCN': 0, 'ROOTPE_WAV': 0, 'ROOTPE_GLC': 0, 'ROOTPE_ICE': 0, 'ROOTPE_LND': 0, 'ROOTPE_CPL': 0, 'ROOTPE_ROF': 0, 'ROOTPE_ATM': 0} 
+Pes setting: pstrid      is {} 
+Pes other settings: {}
+Pes comments: Either did not recognize the resolution or the machine name specified
+ Compset is: 2000_DATM%NYF_SLND_DICE%SSMI_POP2_DROF%NYF_SGLC_WW3 
+ Grid is: a%T62_l%null_oi%gx1v7_r%rx1_g%null_w%ww3a_m%gx1v7 
+ Components in compset are: ['datm', 'slnd', 'dice', 'pop', 'drof', 'sglc', 'ww3', 'sesp', 'drv', 'dart'] 
+No charge_account info available, using value from PROJECT
+Using project from config_machines.xml: none
+cesm model version found: cesm2.1.3-rc.01
+Batch_system_type is none
+ Creating Case directory /public/home/chengxl/cesm/scratch/SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve.20211231_122920_iu2cwy
+Adding user mods directory /public/home/chengxl/cesm/components/pop/cime_config/testdefs/testmods_dirs/pop/144blocks_320x384_spacecurve
+Adding user mods directory /public/home/chengxl/cesm/components/pop/cime_config/testdefs/testmods_dirs/pop/default
+RUN: /public/home/chengxl/cesm/scratch/SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve.20211231_122920_iu2cwy/shell_commands
+
+
+ ---------------------------------------------------
+2021-12-31 12:30:46: SETUP FAILED for test 'SMS_Ld1_P144_D.T62_g17.C.afw_intel.pop-144blocks_320x384_spacecurve'.
+Command: ./case.setup
+Output: 
+ERROR: inputdata root is not a directory or is not readable: ${HOME}/cesm/inputdata
+
+ ---------------------------------------------------
