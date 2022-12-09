@@ -1,0 +1,8 @@
+flanduse_timeseries = /data/chengxl/cesm/data_input/lnd/clm2/surfdata_map/landuse.timeseries_1.9x2.5_hist_16pfts_Irrig_CMIP6_simyr1850-2015_c170824.nc
+fsnowaging = /data/chengxl/cesm/data_input/lnd/clm2/snicardata/snicar_drdt_bst_fit_60_c070416.nc
+fsnowoptics = /data/chengxl/cesm/data_input/lnd/clm2/snicardata/snicar_optics_5bnd_c090915.nc
+fsurdat = /data/chengxl/cesm/data_input/lnd/clm2/surfdata_map/release-clm5.0.18/surfdata_1.9x2.5_hist_16pfts_Irrig_CMIP6_simyr1850_c190304.nc
+finidat = /data/chengxl/cesm/data_input/lnd/clm2/initdata_map/clmi.BHIST.2000-01-01.0.9x1.25_gx1v7_simyr2000_c181015.nc
+fatmlndfrc = /data/chengxl/cesm/data_input/share/domains/domain.lnd.fv1.9x2.5_gx1v6.090206.nc
+paramfile = /data/chengxl/cesm/data_input/lnd/clm2/paramdata/clm5_params.c171117.nc
+stream_fldfilename_urbantv = /data/chengxl/cesm/data_input/lnd/clm2/urbandata/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923.nc

@@ -30,7 +30,7 @@
       <type>char</type>
       <desc>Scripts root utils directory location (setup automatically to $CIMEROOT/scripts/Tools - DO NOT EDIT)</desc>
     </entry>
-    <entry id="MODEL_VERSION" value="cesm2.1.3-rc.01">
+    <entry id="MODEL_VERSION" value="unknown">
       <type>char</type>
       <desc>Apparent version of the model used for this case</desc>
     </entry>
