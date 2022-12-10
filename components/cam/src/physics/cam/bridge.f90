@@ -64,7 +64,7 @@
         use file_io,    only:danzhi,shuzu,filelinenum,weiducanshu,&
                              array_1d,array_2d,array_b_dense,array_w_dense
         !深度学习计算的相关代码
-        use calculation,only:cal_point,cal_output,cal_input,cal_jihuo,cal_dense
+        use calculation,only:cal_output,cal_input,cal_jihuo,cal_dense
         
 
         use shr_kind_mod, only: r8=>shr_kind_r8
@@ -76,10 +76,9 @@
         integer              :: error            !allocate flag
         integer              :: function_kind = 1!激活函数的种类
         !计算中间变量都定义为可变数组，之后根据输入来分配内存空间
-        real,allocatable     ::w(:,:,:),x(:),b(:,:),c(:),y(:,:),&
+        real(r8),allocatable     ::w(:,:,:),x(:),b(:,:),c(:),y(:,:),&
                                w_input(:,:)
-        real                 :: d,z
-        real                 :: wendu_pingjun
+        real(r8)                 :: d,z
         !文件名字符数组都定义长度为100，文件名不宜过长       
         character(len = 100) :: dirname ="/data/chengxl/&
                          pblh_deeplearning/torch_bridge_fortran/python/"
@@ -94,10 +93,9 @@
 
 
  
-        real,allocatable     :: x_array(:,:)
 !从cesm中传进来数据
         integer,intent(in)   :: ncol,m_cesm 
-        real,intent(in)      :: x_cesm(m_cesm,ncol)
+        real(r8),intent(in)  :: x_cesm(m_cesm,ncol)
         real(r8)             :: y_cesm(ncol)
 !===================================================================================================
 
@@ -164,7 +162,7 @@
 
      !----------------------------------------------------------------- 
 
-        !输入w_dense (存在问题)
+        !输入w_dense 
         call array_w_dense(filename_w,n,n,o-1,w(:,:,2:) )
 
         !输入b_dense

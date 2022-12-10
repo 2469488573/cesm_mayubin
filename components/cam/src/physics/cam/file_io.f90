@@ -1,6 +1,6 @@
         module file_io
 ! 这个mdule 主要解决从文件中输入输出参数，分为单值和数组
-
+        use shr_kind_mod , only : r8=>shr_kind_r8
                 implicit none 
 
                 private
@@ -35,7 +35,7 @@
         subroutine danzhi(filename,var)
                 !从文件filename中，读取一个数到var中
                 character(len = 100),intent(in) ::filename
-                real      ::  var 
+                real(r8)      ::  var 
                 open(unit=10,file=filename)
                 read(10,100) var
 100             format(F8.4) 
@@ -48,7 +48,7 @@
                 integer,intent(in)  :: n
                 character(len = 100),intent(in)  :: filename 
                 integer             :: i
-                real                :: var(n)
+                real(r8)                :: var(n)
                 open(unit =15,file = filename)
                 read(15,*) (var(i),i = 1,n)
 !                print*,trim(filename)
@@ -61,7 +61,7 @@
                 integer,intent(in)  :: n,m
                 character(len = 100),intent(in)  :: filename 
                 integer             :: i,j
-                real                :: var(n,m)
+                real(r8)                :: var(n,m)
                 open(unit =16,file = filename)
                 read(16,*) ((var(i,j),j=1,m),i = 1,n)
 !                print*,trim(filename)
@@ -74,7 +74,7 @@
                 integer,intent(in)  :: n,o
                 character(len = 100),intent(in)  :: filename 
                 integer             :: i,j
-                real                :: var(n,o)
+                real(r8)                :: var(n,o)
                 open(unit =17,file = filename)
 
                 do i = 1,o
@@ -93,7 +93,7 @@
                 integer,intent(in)  :: n,m,o
                 character(len = 100),intent(in)  :: filename 
                 integer             :: i,j,k
-                real                :: var(n,m,o)
+                real(r8)                :: var(n,m,o)
                 open(unit =18,file = filename)
 
                 do k = 1,o
@@ -116,7 +116,7 @@
                 integer,intent(in)  :: hangshu,lieshu
                 character(len = 100),intent(in)  :: filename
                 integer             :: i,j 
-                real                :: var(hangshu,lieshu)
+                real(r8)                :: var(hangshu,lieshu)
                 open(unit =11,file = filename)
                 !read(11,100) (var(i,j),i = 1,hangshu)
                 do i =1,hangshu
@@ -143,39 +143,6 @@
                 close(22)
 
         end function filelinenum
-
-!        subroutine tongyong(filename,weidu,var)
-!        !读取的txt需要是一行一个数据，先判断行数（数据数），然后再读成一维数组，再根据输入的参数，reshape成多维数组
-!        !传进来一个一维数组weidu,这个数组控制reshape函数。
-!
-!                character(len = 100),intent(in)  :: filename
-!                integer,intent(in)               :: weidu_index
-!                integer,intent(in)               :: weidu(weidu_index)
-!                real,intent(out)                 :: var(n,m,o)
-!                real,allocatable                 :: yiweishuzu(:) 
-!                integer                          :: length,i
-!
-!100             format(F10.4)
-!
-!                length = filelinenum(filename)
-!
-!                allocate(yiweishuzu(length))
-!
-!                print*,filelinenum(filename)
-!                
-!                open(12,file = trim(filename))
-!
-!                yiweishuzu =0
-!
-!                do i = 1,length
-!                        read(12,100) yiweishuzu(i)                
-!                end do
-!
-!                print*,'yiweishuzu',yiweishuzu
-!
-!                var =  reshape(yiweishuzu,weidu)
-!
-!        end subroutine tongyong
 
 
       end module file_io

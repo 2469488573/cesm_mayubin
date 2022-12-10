@@ -1063,27 +1063,18 @@ subroutine vertical_diffusion_tend( &
 
 !==================================yy=========ma 2022============================ 
      call get_rlat_all_p(lchnk,ncol,latvals)
-!     call compute_hb_diff( lchnk     , ncol     ,                                &
-!          th        , state%t  , state%q , state%zm , state%zi, &
-!          state%pmid, state%u  , state%v , tautotx  , tautoty , &
-!          cam_in%shf, cam_in%cflx(:,1), obklen  , ustar    , pblh    , &
-!          kvm       , kvh      , kvq     , cgh      , cgs     , &
-!          tpert     , qpert    , cldn    , cam_in%ocnfrac  , tke     , &
-!          ri        , &
-!          eddy_scheme )
-!only for ri 
 
      call calc_pbl_h_vector_no_iterate(ri,state%zi(1:ncol,1:pver),pblh(:ncol),obklen(:ncol),latvals(:ncol),pver,ncol,&
                             thvs(:ncol),ustar(:ncol),cam_in%shf(:ncol),gravit,n2(:ncol,pver), &
                             pbl_h(:ncol))
-!     call calc_pbl_h_deeplearn(ncol,ustar(:ncol),cam_in%lhf(:ncol),cam_in%shf(:ncol),pbl_h_dp(:ncol))
+     call calc_pbl_h_deeplearn(ncol,ustar(:ncol),cam_in%lhf(:ncol),cam_in%shf(:ncol),pbl_h_dp(:ncol))
 
 !calculation  of cloud fractional amount    ! 2022-9-20 
-     call qsat(state%t(:ncol,:), state%pmid(:ncol,:), &
-          tem2(:ncol,:), ftem(:ncol,:))
+     call qsat(state%t(:ncol,:), state%pmid(:ncol,:),tem2(:ncol,:), ftem(:ncol,:))
+
      ftem_prePBL(:ncol,:) = state%q(:ncol,:,1)/ftem(:ncol,:)*100._r8
 
-!     call calc_pblh_tbf(ncol,thvs(:ncol),cam_in%cflx(:,1),cam_in%shf(:ncol),cam_in%lhf(:ncol))
+     call calc_pblh_tbf(ncol,thvs(:ncol),cam_in%cflx(:,1),cam_in%shf(:ncol),cam_in%lhf(:ncol),pbl_h_dp(:ncol))
     
    
   call yunliang(ncol,obklen(:ncol),ftem_prePBL(:ncol,31),n_l(:ncol))   

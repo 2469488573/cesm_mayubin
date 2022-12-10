@@ -1,7 +1,7 @@
 &modelio
   diri = "/data/chengxl/cesm/cimeoutput/FHIST_test/bld/wav"
   diro = "/data/chengxl/cesm/cimeoutput/FHIST_test/run"
-  logfile = "wav.log.221211-005622"
+  logfile = "wav.log.221211-052730"
 /
 &pio_inparm
   pio_netcdf_format = "64bit_offset"
@@ -9,5 +9,5 @@
   pio_rearranger = 1
   pio_root = 1
   pio_stride = 64
-  pio_typename = "netcdf"
+  pio_typename = "pnetcdf"
 /

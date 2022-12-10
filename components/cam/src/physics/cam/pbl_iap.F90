@@ -536,7 +536,7 @@ end do
         end subroutine biaozhunhua
       end subroutine calc_pbl_h_deeplearn_three_factor
       
-      subroutine calc_pblh_tbf(ncol,t_c,tau,shf,lhf)
+      subroutine calc_pblh_tbf(ncol,t_c,tau,shf,lhf,pblh_tbf)
 !torch_bridge_fortran 被写成了module，方便在其他程序中调用
 !其中使用者可以把它当成黑箱，深度学习训练好的模型被封装在其中
 !需要输入的是一个二维数组，x_array(cesm_m,ncol),cesm_m 是因子个数
@@ -577,7 +577,7 @@ end do
         integer              :: i,j
  
         integer              :: m = 4
-        real,allocatable     :: x_array(:,:)
+        real(r8),allocatable :: x_array(:,:)
         real(r8)             :: pblh_tbf(ncol)
 
 
