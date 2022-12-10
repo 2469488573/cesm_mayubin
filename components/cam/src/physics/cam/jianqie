@@ -1,0 +1,495 @@
+ subroutine calc_pbl_h_vector(h_ncol_pver,pbl_h_old,obklen,latvals,pver,n,T_c,tau_star,hsb_star,g_in,n2,PBL_H)
+        !--------------------------------------!
+        !purpose:calculate the height of PBL   !
+        !mothod from the zili(2005)  paper     !
+        !                                      !
+        !mayubin 2022-3-25                     !
+        !--------------------------------------!
+
+        !=================!
+        !  input variable !
+        !=================!
+        
+        integer, intent(in)  :: n
+        integer, intent(in)  :: pver
+        real(r8),intent(in)  :: pbl_h_old(n)
+        real(r8),intent(in)  :: obklen(n)
+        real(r8),intent(in)  :: g_in  
+        real(r8),intent(in)  :: T_c(n)
+        real(r8),intent(in)  :: tau_star(n) 
+        real(r8),intent(in)  :: hsb_star(n)      
+        real(r8),intent(in)  :: n2(n,pver)
+        real(r8),intent(in)  :: latvals(n)     !lat in radians (rad)
+        real(r8),intent(in)  :: h_ncol_pver(n,pver)
+        !=================!
+        !  local variable !
+        !=================!
+
+        real(r8)             :: C_R =0.6_r8
+        real(r8)             :: C_CN =1.36_r8
+        real(r8)             :: C_NS =0.51_r8
+        real(r8)             :: NN=0.01_r8     !ping lv
+        real(r8)             :: f(n)           !defult 0.00005_r8 
+        real(r8)             :: h_1(n)
+        real(r8)             :: h_2(n)
+        real(r8)             :: h_3(n)
+        real(r8)             :: beta_b(n)
+        real(r8)             :: h_pver_sum 
+        integer              :: i
+        integer              :: j
+        integer              :: k
+        real(r8)             :: n2_vertical_mean(n)
+        real(r8)             :: pbl_h_stable(n)
+        integer              :: diedaiindex =2
+        integer,parameter    :: zuidadiedaicishu = 10 !die dai zui da ci shu 
+        real(r8)             :: pbl_h_array(n,zuidadiedaicishu)
+        integer              :: pingjuncengshu = 1
+        real(r8)             :: h_pver(pver)
+        integer              :: deltamin,deltamin_index
+        real(r8)             :: delta(pver) 
+        real(r8)             :: hsb_star_nocp(n)
+        real(r8)             :: h_2_temp
+        real(r8)             :: pbl_h_init(n)
+        real(r8)             :: tau_star_2(n)
+        !==================!
+        !  output variable !
+        !==================!
+
+        real(r8),intent(out) :: PBL_H(n)
+
+        !===================!
+        ! ji suan guo cheng !
+        !===================!
+
+!!!!!====zheli xian ceshi yixia nayi ceng suanchulaide zuizhengchang ==
+        ! brunt vaisaila frequency chuizhifangxiang pingjun    
+        do i=1,n
+                n2_vertical_mean(i) = 0
+                do k =1,pver
+                        n2_vertical_mean(i) = n2_vertical_mean(i)+n2(i,k)
+                end do 
+                n2_vertical_mean(i) = n2_vertical_mean(i)/pver
+        end do 
+
+
+        f=2_r8*7.292_r8*0.00001_r8*sin(latvals)
+
+        beta_b = g_in/T_c
+
+  
+        ! hsb_star  ke neng duo cheng le yi ge C_p ,yao bu yao chu diao ,zheyang hui
+        ! xian zhu zeng jia bian jie ceng gao du  
+       !tau_star he u_star
+
+        tau_star_2 = tau_star**2
+
+        hsb_star_nocp  = hsb_star 
+
+        h_1 = (f**2)/((C_R**2)*tau_star)
+
+        h_2 = (sqrt(abs(n2_vertical_mean))*abs(f))/(tau_star*(C_CN**2))
+
+        h_3 = abs(f*hsb_star_nocp*beta_b)/(C_CN**2*tau_star**2)
+
+        pbl_h_stable = sqrt(1/(h_1+h_2+h_3))
+        pbl_h_init = pbl_h_stable
+
+        !you yu dui fu li ping lv ji fen shi bu zhi dao gao du ,yin ci xu yao die dai
+        !ji suan 
+        
+!        pbl_h_array(:,1)= pbl_h_stable 
+
+        !dui ncols jin xin pingjun deidao h_pver(pver)
+!         do j = 1,pver
+!                 h_pver_sum = 0
+!                 do i = 1,n 
+!                         h_pver_sum = h_pver_sum + h_ncol_pver(i,j)
+!                 end do 
+!                 h_pver(j) = h_pver_sum / n
+!                 print*,h_pver(j)
+!         end do 
+
+!        do i = 1,pver 
+!                print*, "di" ,i , "ceng,biaohzungaodu=" ,h_pver(i)
+!        end do 
+
+
+        
+!        do i = 1,pver 
+!                do j = 1,n
+!                   print*," i = ",i,", j = ",j,", biaozhungaodu =",h_ncol_pver(j,i)
+!                end do 
+!        end do 
+      do k = 1,n
+      diedaiindex = 2
+      pbl_h_array(k,1)= pbl_h_stable(k) 
+        do while( abs(pbl_h_array(k,diedaiindex)-pbl_h_array(k,diedaiindex-1)) > 100&
+                 .and. diedaiindex<zuidadiedaicishu )
+                !pan duan pbl_h he na ge pver zui jie jin 
+                do i = 1 , pver
+                        delta(i) = abs(pbl_h_array(k,diedaiindex) - h_ncol_pver(k,i) )
+                end do 
+                
+                !jisuan zuixiaozhi bing jilu  index 
+                deltamin = delta(1)
+                deltamin_index = 1
+
+                do i = 1,pver
+                        if( delta(i)<deltamin) then 
+                                deltamin = delta(i)
+                                deltamin_index = i 
+                        end if 
+
+                end do 
+                         
+                !jisuan zuijiejin de na yi ceng yi ji shangmian ji ceng N_mean
+
+                
+                       ! n2_vertical_mean(i) = 0_r8
+
+                      !  do j =deltamin_index-pingjuncengshu,deltamin_index
+                      !          n2_vertical_mean(i) = n2_vertical_mean(i)+&
+                      !          n2(i,j)
+                      !  end do 
+                      !  n2_vertical_mean(i) = n2_vertical_mean(i)/(pingjuncengshu+1)
+                        n2_vertical_mean(k)=n2(k,deltamin_index-1)
+
+                !ji suan xin de bian jie ceng gao du  
+                h_2_temp = (sqrt(abs(n2_vertical_mean(k)))*abs(f(k)))/(tau_star(k)*(C_CN**2))
+                
+                pbl_h_array(k,diedaiindex) = sqrt(1/(h_1(k)+h_2_temp+h_3(k)))
+
+
+                !index j add 1 
+                diedaiindex=diedaiindex+1
+        end do 
+  pbl_h_stable(k) = pbl_h_array(k,diedaiindex-1)
+
+     end do 
+
+
+        !dui wen ding du jin xing pan duan 
+
+        do  i = 1, n
+                if ( obklen(i) > 0 ) then 
+                        PBL_H(i) = pbl_h_stable(i) 
+                else
+                        PBL_H(i) = pbl_h_stable(i)
+                end if
+        end do
+ 
+
+
+       !!!test
+
+        !===============================
+        !PBL_H = tau_star**2/g_in
+        !===============================
+        !PBL_H = g_in/(f**2)
+        !===============================
+        !PBL_H = abs(tau_star)/f
+        !===============================
+        !PBL_H = ((tau_star**4)*(f**2))/(g_in**3)
+        !===============================
+        !PBL_H = g_in/n2_vertical_mean   
+        !===============================
+        !PBL_H = (g_in*tau_star**2)**3  
+        !===============================   
+        !PBL_H = T_c/hsb_star 
+        !===============================
+
+      end subroutine calc_pbl_h_vector
+
+ subroutine calc_pbl_h_vector_no_iterate(h_ncol_pver,pbl_h_old,obklen,latvals,pver,n,T_c,tau_star,hsb_star,g_in,n2,PBL_H)
+        !--------------------------------------!
+        !purpose:calculate the height of PBL   !
+        !mothod from the zili(2005)  paper     !
+        !                                      !
+        !mayubin 2022-5-19                     !
+        !--------------------------------------!
+
+        !=================!
+        !  input variable !
+        !=================!
+        
+        integer, intent(in)  :: n
+        integer, intent(in)  :: pver
+        real(r8),intent(in)  :: pbl_h_old(n)
+        real(r8),intent(in)  :: obklen(n)
+        real(r8),intent(in)  :: g_in  
+        real(r8),intent(in)  :: T_c(n)
+        real(r8),intent(in)  :: tau_star(n) 
+        real(r8),intent(in)  :: hsb_star(n)      
+        real(r8),intent(in)  :: n2(n,pver)
+        real(r8),intent(in)  :: latvals(n)     !lat in radians (rad)
+        real(r8),intent(in)  :: h_ncol_pver(n,pver)
+        !=================!
+        !  local variable !
+        !=================!
+
+        real(r8)             :: C_R =0.6_r8
+        real(r8)             :: C_CN =1.36_r8
+        real(r8)             :: C_NS =0.51_r8
+        real(r8)             :: NN=0.01_r8     !ping lv
+        real(r8)             :: f(n)           !defult 0.00005_r8 
+        real(r8)             :: h_1(n)
+        real(r8)             :: h_2(n)
+        real(r8)             :: h_3(n)
+        real(r8)             :: beta_b(n)
+        real(r8)             :: h_pver_sum 
+        integer              :: i
+        integer              :: j
+        integer              :: k
+        real(r8)             :: n2_vertical_mean(n)
+        real(r8)             :: pbl_h_stable(n)
+        integer              :: diedaiindex =2
+        integer,parameter    :: zuidadiedaicishu = 10 !die dai zui da ci shu 
+        real(r8)             :: pbl_h_array(n,zuidadiedaicishu)
+        integer              :: pingjuncengshu = 4
+        real(r8)             :: h_pver(pver)
+        integer              :: deltamin,deltamin_index
+        real(r8)             :: delta(pver) 
+        real(r8)             :: hsb_star_nocp(n)
+        real(r8)             :: h_2_temp
+        real(r8)             :: pbl_h_init(n)
+        real(r8)             :: tau_star_2(n)
+        !==================!
+        !  output variable !
+        !==================!
+
+        real(r8),intent(out) :: PBL_H(n)
+
+        !===================!
+        ! ji suan guo cheng !
+        !===================!
+
+        !!!!!====zheli xian ceshi yixia nayi ceng suanchulaide zuizhengchang ==
+        ! brunt vaisaila frequency chuizhifangxiang pingjun    
+        do i=1,n
+                n2_vertical_mean(i) = 0
+                do k =24,28
+                        n2_vertical_mean(i) = n2_vertical_mean(i)+n2(i,k)
+                end do 
+                n2_vertical_mean(i) = n2_vertical_mean(i)/5
+        end do 
+
+        f=2_r8*7.292_r8*0.00001_r8*sin(latvals)
+        beta_b = g_in/T_c
+  
+        ! hsb_star  ke neng duo cheng le yi ge C_p ,yao bu yao chu diao ,zheyang hui
+        ! xian zhu zeng jia bian jie ceng gao du  
+        !tau_star he u_star
+        hsb_star_nocp  = hsb_star/1004 
+
+        h_1 = (f**2)/((C_R**2)*tau_star)
+        h_2 = (sqrt(abs(n2_vertical_mean))*abs(f))/(tau_star*(C_CN**2))
+        h_3 = abs(f*hsb_star_nocp*beta_b)/(C_CN**2*tau_star**2)
+        pbl_h_stable = sqrt(1/(h_1+h_2+h_3))
+
+!dui xinfangan de maxmin h jinxing xianzhi 
+
+        do i = 1,n
+                if(pbl_h_stable(i)>3000)then
+                        pbl_h_stable(i) = 3000
+                end if
+                if(pbl_h_stable(i)<10)then 
+                        pbl_h_stable = 10
+                end if  
+        end do
+        !dui wen ding du jin xing pan duan 
+        do  i = 1, n
+                if ( obklen(i) > 0 ) then 
+                        PBL_H(i) = pbl_h_stable(i) 
+                else
+                        PBL_H(i) = pbl_h_old(i)
+                end if
+        end do
+
+      end subroutine calc_pbl_h_vector_no_iterate
+
+
+2022-9-10
+ subroutine calc_pbl_h_vector_no_iterate(ri,h_ncol_pver,pbl_h_old,obklen,latvals,pver,n,T_c,tau_star,hsb_star,g_in,n2,PBL_H)
+        !--------------------------------------!
+        !purpose:calculate the height of PBL   !
+        !mothod from the zili(2005)  paper     !
+        !                                      !
+        !mayubin 2022-5-19                     !
+        !--------------------------------------!
+
+        !=================!
+        !  input variable !
+        !=================!
+        
+        integer, intent(in)  :: n
+        integer, intent(in)  :: pver
+        real(r8),intent(in)  :: pbl_h_old(n)
+        real(r8),intent(in)  :: obklen(n)
+        real(r8),intent(in)  :: g_in  
+        real(r8),intent(in)  :: T_c(n)
+        real(r8),intent(in)  :: tau_star(n) 
+        real(r8),intent(in)  :: hsb_star(n)      
+        real(r8),intent(in)  :: n2(n,pver),ri(n,pver)
+        real(r8),intent(in)  :: latvals(n)     !lat in radians (rad)
+        real(r8),intent(in)  :: h_ncol_pver(n,pver)
+        !=================!
+        !  local variable !
+        !=================!
+
+        real(r8)             :: C_R =0.6_r8
+        real(r8)             :: C_CN =1.36_r8
+        real(r8)             :: C_NS =0.51_r8
+        real(r8)             :: NN=0.01_r8     !ping lv
+        real(r8)             :: f(n)           !defult 0.00005_r8 
+        real(r8)             :: h_1(n)
+        real(r8)             :: h_2(n)
+        real(r8)             :: h_3(n)
+        real(r8)             :: beta_b(n)
+        real(r8)             :: h_pver_sum 
+        integer              :: i
+        integer              :: j
+        integer              :: k
+        real(r8)             :: n2_vertical_mean(n)
+        real(r8)             :: pbl_h_stable(n)
+        integer              :: diedaiindex =2
+        integer,parameter    :: zuidadiedaicishu = 10 !die dai zui da ci shu 
+        real(r8)             :: pbl_h_array(n,zuidadiedaicishu)
+        integer              :: pingjuncengshu = 4
+        real(r8)             :: h_pver(pver)
+        integer              :: deltamin,deltamin_index
+        real(r8)             :: delta(pver) 
+        real(r8)             :: hsb_star_nocp(n)
+        real(r8)             :: h_2_temp
+        real(r8)             :: pbl_h_init(n)
+        real(r8)             :: tau_star_2(n)
+        real(r8)             :: f_min
+        !==================!
+        !  output variable !
+        !==================!
+
+        real(r8),intent(out) :: PBL_H(n)
+
+        !===================!
+        ! ji suan guo cheng !
+        !===================!
+
+        !!!!!====zheli xian ceshi yixia nayi ceng suanchulaide zuizhengchang ==
+        ! brunt vaisaila frequency chuizhifangxiang pingjun    
+        do i=1,n
+                n2_vertical_mean(i) = 0
+                do k =24,28
+                        n2_vertical_mean(i) = n2_vertical_mean(i)+n2(i,k)
+                end do 
+                n2_vertical_mean(i) = n2_vertical_mean(i)/5
+        end do 
+do i = 1,n
+
+        if(latvals(i)<0.and.latvals(i)>-15*3.14/180)then
+                f(i) = -15*3.14/180
+        end if
+        if(latvals(i) >= 0 .and. latvals(i) <15* 3.14/180)then
+                f(i) = 15*3.14/180
+        end if
+
+end do
+
+
+        f=2_r8*7.292_r8*0.00001_r8*sin(latvals)
+        
+!        do i = 1,n
+!                if(f(i)<f_min)then
+!                        f(i) = f_min
+!                end if
+!        end do
+
+        beta_b = g_in/T_c
+  
+        ! hsb_star  ke neng duo cheng le yi ge C_p ,yao bu yao chu diao ,zheyang hui
+        ! xian zhu zeng jia bian jie ceng gao du  
+        !tau_star he u_star
+        hsb_star_nocp  = hsb_star 
+
+        h_1 = (f**2)/((C_R**2)*tau_star)
+        h_2 = (sqrt(abs(n2_vertical_mean))*abs(f))/(tau_star*(C_CN**2))
+        h_3 = abs(f*hsb_star_nocp*beta_b)/(C_CN**2*tau_star**2)
+        pbl_h_stable = sqrt(1/(h_1+h_2+h_3))
+
+!dui xinfangan de maxmin h jinxing xianzhi 
+
+        do i = 1,n
+                if(pbl_h_stable(i)>3000)then
+                        pbl_h_stable(i) = 3000
+                end if
+                if(pbl_h_stable(i)<10)then 
+                        pbl_h_stable = 10
+                end if  
+        end do
+        !chakan ri
+!        do i = 1,n
+!                do j = 1,pver
+!                        print*,i,j,ri(i,j)
+!                end do
+!        end do 
+        !dui wen ding du jin xing pan duan 
+
+        do  i = 1, n
+                
+                if ( obklen(i) > 0 .and. ri(i,31)>0.25_r8) then
+!                        print*,"di",i,"ncol" ,ri(i,31) 
+                        PBL_H(i) = pbl_h_stable(i) 
+                else
+                        PBL_H(i) = pbl_h_old(i)
+                end if
+        end do
+
+      end subroutine calc_pbl_h_vector_no_iterate
+
+
+r
+2022-9-20
+        subroutine yunliang(ncol,obklen , rh , n_l)
+                integer,intent(in)  :: ncol
+                real(r8),intent(in) :: rh(ncol) 
+                real(r8),intent(in) :: obklen(ncol)
+                integer             :: i
+                real(r8)            :: n_l_stable(ncol)
+                real(r8)            :: n_l_unstable(ncol)
+
+                real(r8),intent(out) :: n_l(ncol)
+
+                !stable 
+                do i = 1, ncol 
+                        if(rh(i)>= 80_r8 )then 
+                                n_l_stable(i)  = ((rh(i) - 80_r8)**2_r8) / 4_r8
+                        else if(rh(i)<80_r8)then
+                                n_l_stable(i)  = 0_r8
+                        end if
+                end do
+
+
+                !unstable 
+                do  i = 1,ncol
+                        if(rh(i)>=57_r8 )then  
+                                 n_l_unstable(i)  =-0.74_r8 + -1.257_r8*rh(i) + 0.022644_r8*rh(i)*rh(i)
+                        else if (rh(i)<57_r8)then 
+                                n_l_unstable(i)  = 0_r8  
+                        end if 
+                end do 
+
+                !panduan 
+                do i = 1 , ncol
+                        if(obklen(i)>=0_r8) then 
+                                n_l(i) = n_l_stable(i)
+                        else if( obklen(i)< 0_r8 )then 
+                                n_l(i) = n_l_unstable(i)
+                        end if 
+                end do 
+        
+
+
+ 
+                        
+        end subroutine yunliang
+
+
+
