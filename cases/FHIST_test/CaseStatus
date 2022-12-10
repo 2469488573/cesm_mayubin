@@ -1,28 +1,34 @@
-2022-12-10 06:16:29: case.setup starting 
+2022-12-10 23:29:59: case.setup starting 
  ---------------------------------------------------
-2022-12-10 06:16:31: case.setup success 
+2022-12-10 23:30:02: case.setup success 
  ---------------------------------------------------
-2022-12-10 06:16:32: xmlchange success <command> ./xmlchange NTASKS=64  </command>
+2022-12-10 23:30:03: xmlchange success <command> ./xmlchange NTASKS=64  </command>
  ---------------------------------------------------
-2022-12-10 06:16:32: setup.clean starting 
+2022-12-10 23:30:04: setup.clean starting 
  ---------------------------------------------------
-2022-12-10 06:16:32: setup.clean success 
+2022-12-10 23:30:04: setup.clean success 
  ---------------------------------------------------
-2022-12-10 06:16:33: case.setup starting 
+2022-12-10 23:30:04: case.setup starting 
  ---------------------------------------------------
-2022-12-10 06:16:33: build.clean starting 
+2022-12-10 23:30:05: build.clean starting 
  ---------------------------------------------------
-2022-12-10 06:17:19: build.clean success 
+2022-12-10 23:31:16: build.clean success 
  ---------------------------------------------------
-2022-12-10 06:17:21: case.setup success 
+2022-12-10 23:31:19: case.setup success 
  ---------------------------------------------------
-2022-12-10 06:17:21: case.build starting 
+2022-12-10 23:31:20: case.build starting 
  ---------------------------------------------------
-2022-12-10 06:30:17: case.build error 
-ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221210-061721
+2022-12-10 23:50:51: case.build success 
  ---------------------------------------------------
-2022-12-10 06:30:17: case.build starting 
+2022-12-10 23:50:56: case.build starting 
  ---------------------------------------------------
-2022-12-10 06:31:13: case.build error 
-ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221210-063018
+2022-12-10 23:52:16: case.build success 
+ ---------------------------------------------------
+2022-12-11 00:35:35: case.build starting 
+ ---------------------------------------------------
+2022-12-11 00:39:40: case.build success 
+ ---------------------------------------------------
+2022-12-11 00:56:21: case.build starting 
+ ---------------------------------------------------
+2022-12-11 01:00:35: case.build success 
  ---------------------------------------------------

@@ -1,7 +1,7 @@
 &modelio
   diri = "/data/chengxl/cesm/cimeoutput/FHIST_test/bld/ice"
   diro = "/data/chengxl/cesm/cimeoutput/FHIST_test/run"
-  logfile = "ice.log.221210-063018"
+  logfile = "ice.log.221211-005622"
 /
 &pio_inparm
   pio_netcdf_format = "64bit_offset"
