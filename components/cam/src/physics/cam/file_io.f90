@@ -20,6 +20,7 @@
                 character(len = 100),intent(in) ::filename
                 integer,intent(inout)      ::  n,m,o 
                 open(unit=13,file=filename)
+                rewind(unit = 13)
                 read(13,*) 
                 read(13,*)
                 read(13,*)
@@ -28,7 +29,7 @@
                 read(13,*), n
                 read(13,*)
                 read(13,*), o
- 
+                close(13) 
 
         end subroutine weiducanshu
 
@@ -37,10 +38,12 @@
                 character(len = 100),intent(in) ::filename
                 real(r8)      ::  var 
                 open(unit=10,file=filename)
+                rewind(unit = 10)
                 read(10,100) var
 100             format(F8.4) 
 !                print*,trim(filename)
 !                print*,var
+                close(10)
         end subroutine danzhi
 
         subroutine array_1d(filename,n,var)
@@ -50,10 +53,11 @@
                 integer             :: i
                 real(r8)                :: var(n)
                 open(unit =15,file = filename)
+                rewind(unit = 15)
                 read(15,*) (var(i),i = 1,n)
 !                print*,trim(filename)
 !                print*,var
-
+                close(15)
         end subroutine array_1d
 
         subroutine array_2d(filename,n,m,var)
@@ -63,10 +67,11 @@
                 integer             :: i,j
                 real(r8)                :: var(n,m)
                 open(unit =16,file = filename)
+                rewind(unit = 16)
                 read(16,*) ((var(i,j),j=1,m),i = 1,n)
 !                print*,trim(filename)
 !                print*,var
-
+!                close(16)
         end subroutine array_2d
 
         subroutine array_b_dense(filename,n,o,var)
@@ -76,7 +81,7 @@
                 integer             :: i,j
                 real(r8)                :: var(n,o)
                 open(unit =17,file = filename)
-
+                rewind(unit = 17)
                 do i = 1,o
                         do j = 1, n 
                                 read(17,*) var(j,i)
@@ -85,7 +90,7 @@
 
 !                print*,trim(filename)
 !                print*,var
-
+!                close(17)
         end subroutine array_b_dense
 
         subroutine array_w_dense(filename,n,m,o,var)
@@ -95,6 +100,7 @@
                 integer             :: i,j,k
                 real(r8)                :: var(n,m,o)
                 open(unit =18,file = filename)
+                rewind(unit = 18)
 
                 do k = 1,o
                         do i = 1,n
@@ -104,7 +110,7 @@
 
 !                print*,trim(filename)
 !                print*,var
-
+!                close(18)
         end subroutine array_w_dense
 
 
@@ -118,6 +124,7 @@
                 integer             :: i,j 
                 real(r8)                :: var(hangshu,lieshu)
                 open(unit =11,file = filename)
+                rewind(unit= 11)
                 !read(11,100) (var(i,j),i = 1,hangshu)
                 do i =1,hangshu
                         do j =1,lieshu
@@ -125,22 +132,22 @@
                         enddo
                 enddo
 100             format(F8.4)
-                print*,'在数组子程序中输出var = ',var
+!                print*,'在数组子程序中输出var = ',var
 
-
+!                close(11)
         end subroutine shuzu
 
         integer function filelinenum(a)
                 integer ios
                 character a*100
-                open(22,file=trim(a))
+                open(22,file=trim(a),position = 'rewind')
                 filelinenum=0
                 do
                         read(22,*,iostat=ios)
                         if(ios/=0)exit
                         filelinenum=filelinenum+1
                 end do
-                close(22)
+!                close(22)
 
         end function filelinenum
 
