@@ -69,6 +69,10 @@ hwave=x(19) !wave height (m)
      Rnl=0.97*(5.67e-8*(ts-0.3*jcool+tdk)**4-Rl) 
      
 !***************   Begin bulk loop *******
+
+
+
+
      
 !***************  first guess ************
     du=u-us 
@@ -98,13 +102,16 @@ hwave=x(19) !wave height (m)
         zetu=CC*Ribu*(1+27/9*Ribu/CC)
     endif 
     L10=zu/zetu 
+
     if (zetu .GT. 50) then 
         nits=1 
     endif 
+
      usr=ut*von/(log(zu/zo10)-psiuo(zu/L10))
      tsr=-(dt-dter*jcool)*von*fdg/(log(zt/zot10)-psit_30(zt/L10)) 
      qsr=-(dq-wetc*dter*jcool)*von*fdg/(log(zq/zot10)-psit_30(zq/L10)) 
      tkt=.001
+
      charn=0.011 
    if (ut .GT. 10) then
       charn=0.011+(ut-10)/(18-10)*(0.018-0.011) 
@@ -112,34 +119,44 @@ hwave=x(19) !wave height (m)
    if (ut .GT. 18) then
       charn=0.018 
    endif 
-        
+
+
+
+    
      !***************  bulk loop ************
   do i=1, nits 
      
-     zet=von*grav*zu/ta*(tsr*(1+0.61*Q)+.61*ta*qsr)/(usr*usr)/(1+0.61*Q) 
+     zet=von*grav*zu/ta*(tsr*(1+0.61*Q)+.61*ta*qsr)/(usr*usr)/(1+0.61*Q) !计算 z/L 
       !disp(usr)
       !disp(zet) 
-      if (jwave .EQ. 0) zo=charn*usr*usr/grav+0.11*visa/usr  
+      if (jwave .EQ. 0) zo=charn*usr*usr/grav+0.11*visa/usr       !计算charn数 
       if (jwave .EQ. 1) zo=50/2/pi*lwave*(usr/cwave)**4.5+0.11*visa/usr !Oost et al
       if (jwave .EQ. 2) zo=1200*hwave*(hwave/lwave)**4.5+0.11*visa/usr !Taylor and Yelland
-      rr=zo*usr/visa 
-     L=zu/zet 
-     zoq=min(1.15e-4,5.5e-5/rr**.6) 
-     zot=zoq 
-     usr=ut*von/(log(zu/zo)-psiuo(zu/L)) 
-     tsr=-(dt-dter*jcool)*von*fdg/(log(zt/zot)-psit_30(zt/L)) 
-     qsr=-(dq-wetc*dter*jcool)*von*fdg/(log(zq/zoq)-psit_30(zq/L)) 
-     Bf=-grav/ta*usr*(tsr+.61*ta*qsr) 
+      rr=zo*usr/visa              !计算粗糙度雷诺数
+     L=zu/zet                           !计算L
+     zoq=min(1.15e-4,5.5e-5/rr**.6)     !定义zoq
+     zot=zoq                            !定义zot
+     usr=ut*von/(log(zu/zo)-psiuo(zu/L))                          !计算u_*
+     tsr=-(dt-dter*jcool)*von*fdg/(log(zt/zot)-psit_30(zt/L))           ! t_*
+     qsr=-(dq-wetc*dter*jcool)*von*fdg/(log(zq/zoq)-psit_30(zq/L))       ! q_*
+
+     Bf=-grav/ta*usr*(tsr+.61*ta*qsr)                                 !Bf   ?
+
      if (Bf .GT. 0) then
+!根据Bf计算阵风
        ug=Beta*(Bf*zi)**.333 
      else
        ug=.2 
      endif
+
      ut=sqrt(du*du+ug*ug) 
-     Rnl=0.97*(5.67e-8*(ts-dter*jcool+tdk)**4-Rl) 
-     hsb=-rhoa*cpa*usr*tsr 
-     hlb=-rhoa*Le*usr*qsr 
+     Rnl=0.97*(5.67e-8*(ts-dter*jcool+tdk)**4-Rl)   !关于辐射
+
+     hsb=-rhoa*cpa*usr*tsr                 !感热通量
+     hlb=-rhoa*Le*usr*qsr                       !潜热通量
+!-----------------------------------------------------------------------
      qout=Rnl+hsb+hlb 
+
      dels=Rns*(.065+11*tkt-6.6e-5/tkt*(1-exp(-tkt/8.0e-4))) ! Eq.16 Shortwave
      qcol=qout-dels 
      alq=Al*qcol+be*hlb*cpw/Le  ! Eq. 7 Buoy flux water
@@ -158,6 +175,7 @@ hwave=x(19) !wave height (m)
 !      print *,' third guesses=',usr,tsr,qsr,ug,ut
    
   enddo !bulk iter loop
+
      tau=rhoa*usr*usr*du/ut                 !stress
      hsb=-rhoa*cpa*usr*tsr 
      hlb=-rhoa*Le*usr*qsr 
@@ -172,6 +190,7 @@ hwave=x(19) !wave height (m)
      wbar=1.61*hlb/Le/(1+1.61*Q)/rhoa+hsb/rhoa/cpa/ta !formulation in hlb already includes webb
      !wbar=1.61*hlb/Le/rhoa+(1+1.61*Q)*hsb/rhoa/cpa/ta 
      hl_webb=rhoa*wbar*Q*Le 
+
      !**************   compute transfer coeffs relative to ut @meas. ht **********
      Cd=tau/rhoa/ut/max(.1,du) 
      Ch=-usr*tsr/ut/(dt-dter*jcool) 
@@ -180,6 +199,8 @@ hwave=x(19) !wave height (m)
      Cdn_10=von*von/log(10/zo)/log(10/zo) 
      Chn_10=von*von*fdg/log(10/zo)/log(10/zot) 
      Cen_10=von*von*fdg/log(10/zo)/log(10/zoq) 
+
+
   !**************** the Y array going back tom the main program **************** 
    y=(/hsb, hlb, tau, zo, zot, zoq, L, usr, tsr, qsr, dter, dqer, tkt, RF, wbar, Cd, Ch, Ce, Cdn_10, Chn_10, Cen_10, ug /) 
    !   1     2    3   4    5    6   7   8    9   10    11    12   13   14   15   16  17  18    19      20       21   22

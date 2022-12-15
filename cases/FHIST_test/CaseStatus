@@ -1,26 +1,151 @@
-2022-12-12 15:53:59: case.setup starting 
+2022-12-14 23:21:23: case.setup starting 
  ---------------------------------------------------
-2022-12-12 15:54:02: case.setup success 
+2022-12-14 23:21:27: case.setup success 
  ---------------------------------------------------
-2022-12-12 15:54:03: xmlchange success <command> ./xmlchange NTASKS=64  </command>
+2022-12-14 23:21:28: xmlchange success <command> ./xmlchange NTASKS=64  </command>
  ---------------------------------------------------
-2022-12-12 15:54:03: setup.clean starting 
+2022-12-14 23:21:29: setup.clean starting 
  ---------------------------------------------------
-2022-12-12 15:54:03: setup.clean success 
+2022-12-14 23:21:29: setup.clean success 
  ---------------------------------------------------
-2022-12-12 15:54:04: case.setup starting 
+2022-12-14 23:21:30: case.setup starting 
  ---------------------------------------------------
-2022-12-12 15:54:05: build.clean starting 
+2022-12-14 23:21:31: build.clean starting 
  ---------------------------------------------------
-2022-12-12 15:55:18: build.clean success 
+2022-12-14 23:22:43: build.clean success 
  ---------------------------------------------------
-2022-12-12 15:55:20: case.setup success 
+2022-12-14 23:22:45: case.setup success 
  ---------------------------------------------------
-2022-12-12 15:55:21: case.build starting 
+2022-12-14 23:22:46: case.build starting 
  ---------------------------------------------------
-2022-12-12 16:11:47: case.build success 
+2022-12-14 23:40:20: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221214-232246
  ---------------------------------------------------
-2022-12-12 16:11:48: case.build starting 
+2022-12-14 23:40:22: case.build starting 
  ---------------------------------------------------
-2022-12-12 16:12:54: case.build success 
+2022-12-14 23:41:19: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221214-234022
+ ---------------------------------------------------
+2022-12-15 04:23:24: case.build starting 
+ ---------------------------------------------------
+2022-12-15 04:24:10: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-042324
+ ---------------------------------------------------
+2022-12-15 04:44:07: case.build starting 
+ ---------------------------------------------------
+2022-12-15 04:44:43: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-044407
+ ---------------------------------------------------
+2022-12-15 04:45:40: case.build starting 
+ ---------------------------------------------------
+2022-12-15 04:48:23: case.build success 
+ ---------------------------------------------------
+2022-12-15 17:21:37: case.build starting 
+ ---------------------------------------------------
+2022-12-15 17:22:28: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-172137
+ ---------------------------------------------------
+2022-12-15 17:43:33: case.build starting 
+ ---------------------------------------------------
+2022-12-15 17:44:25: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-174334
+ ---------------------------------------------------
+2022-12-15 17:48:20: case.build starting 
+ ---------------------------------------------------
+2022-12-15 17:49:12: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-174821
+ ---------------------------------------------------
+2022-12-15 17:49:27: case.build starting 
+ ---------------------------------------------------
+2022-12-15 17:50:24: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-174929
+ ---------------------------------------------------
+2022-12-15 17:53:56: case.build starting 
+ ---------------------------------------------------
+2022-12-15 17:54:45: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-175356
+ ---------------------------------------------------
+2022-12-15 17:59:16: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:00:02: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-175916
+ ---------------------------------------------------
+2022-12-15 18:04:49: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:05:37: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-180449
+ ---------------------------------------------------
+2022-12-15 18:06:51: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:07:38: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-180652
+ ---------------------------------------------------
+2022-12-15 18:11:26: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:12:13: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-181126
+ ---------------------------------------------------
+2022-12-15 18:23:00: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:23:47: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-182300
+ ---------------------------------------------------
+2022-12-15 18:30:38: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:31:28: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-183039
+ ---------------------------------------------------
+2022-12-15 18:32:10: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:33:02: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-183210
+ ---------------------------------------------------
+2022-12-15 18:37:37: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:38:20: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-183738
+ ---------------------------------------------------
+2022-12-15 18:39:45: case.build starting 
+ ---------------------------------------------------
+2022-12-15 18:40:30: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-183946
+ ---------------------------------------------------
+2022-12-15 19:37:30: case.build starting 
+ ---------------------------------------------------
+2022-12-15 19:38:27: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-193731
+ ---------------------------------------------------
+2022-12-15 19:40:08: case.build starting 
+ ---------------------------------------------------
+2022-12-15 19:40:58: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-194008
+ ---------------------------------------------------
+2022-12-15 19:42:06: case.build starting 
+ ---------------------------------------------------
+2022-12-15 19:42:57: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-194206
+ ---------------------------------------------------
+2022-12-15 19:44:39: case.build starting 
+ ---------------------------------------------------
+2022-12-15 19:45:28: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-194440
+ ---------------------------------------------------
+2022-12-15 19:45:44: case.build starting 
+ ---------------------------------------------------
+2022-12-15 19:46:32: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-194545
+ ---------------------------------------------------
+2022-12-15 20:09:34: case.build starting 
+ ---------------------------------------------------
+2022-12-15 20:10:24: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-200934
+ ---------------------------------------------------
+2022-12-15 20:22:35: case.build starting 
+ ---------------------------------------------------
+2022-12-15 20:23:27: case.build error 
+ERROR: BUILD FAIL: cam.buildlib failed, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/atm.bldlog.221215-202235
+ ---------------------------------------------------
+2022-12-15 20:24:09: case.build starting 
+ ---------------------------------------------------
+2022-12-15 20:25:54: case.build success 
  ---------------------------------------------------
