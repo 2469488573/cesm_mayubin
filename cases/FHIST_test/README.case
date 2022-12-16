@@ -1,42 +1,42 @@
-2022-12-14 23:21:21: ./create_newcase --case /public/home/chengxl/cesm/cases/FHIST_test --res f19_f19 --compset FHIST --run-unsupported --compiler intel --mach afw
+2022-12-17 03:04:07: ./create_newcase --case /public/home/chengxl/cesm/cases/FHIST_test --res f19_f19 --compset FHIST --run-unsupported --compiler intel --mach afw
  ---------------------------------------------------
-2022-12-14 23:21:21: Compset longname is HIST_CAM60_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV
+2022-12-17 03:04:07: Compset longname is HIST_CAM60_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_CISM2%NOEVOLVE_SWAV
  ---------------------------------------------------
-2022-12-14 23:21:21: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
+2022-12-17 03:04:07: Compset specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_compsets.xml
  ---------------------------------------------------
-2022-12-14 23:21:21: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
+2022-12-17 03:04:07: Pes     specification file is /public/home/chengxl/cesm/components/cam//cime_config/config_pes.xml
  ---------------------------------------------------
-2022-12-14 23:21:21: Forcing is Historic transient 
+2022-12-17 03:04:07: Forcing is Historic transient 
  ---------------------------------------------------
-2022-12-14 23:21:21: Using None coupler instances
+2022-12-17 03:04:07: Using None coupler instances
  ---------------------------------------------------
-2022-12-14 23:21:21: Component ATM is CAM cam6 physics:
+2022-12-17 03:04:07: Component ATM is CAM cam6 physics:
  ---------------------------------------------------
-2022-12-14 23:21:21: ATM_GRID is 1.9x2.5
+2022-12-17 03:04:07: ATM_GRID is 1.9x2.5
  ---------------------------------------------------
-2022-12-14 23:21:21: Component LND is clm5.0:Satellite phenology:
+2022-12-17 03:04:07: Component LND is clm5.0:Satellite phenology:
  ---------------------------------------------------
-2022-12-14 23:21:21: LND_GRID is 1.9x2.5
+2022-12-17 03:04:07: LND_GRID is 1.9x2.5
  ---------------------------------------------------
-2022-12-14 23:21:21: Component ICE is Sea ICE (cice) model version 5 :prescribed cice
+2022-12-17 03:04:07: Component ICE is Sea ICE (cice) model version 5 :prescribed cice
  ---------------------------------------------------
-2022-12-14 23:21:21: ICE_GRID is 1.9x2.5
+2022-12-17 03:04:07: ICE_GRID is 1.9x2.5
  ---------------------------------------------------
-2022-12-14 23:21:21: Component OCN is DOCN   prescribed ocean mode
+2022-12-17 03:04:07: Component OCN is DOCN   prescribed ocean mode
  ---------------------------------------------------
-2022-12-14 23:21:21: OCN_GRID is 1.9x2.5
+2022-12-17 03:04:07: OCN_GRID is 1.9x2.5
  ---------------------------------------------------
-2022-12-14 23:21:21: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
+2022-12-17 03:04:07: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
  ---------------------------------------------------
-2022-12-14 23:21:21: ROF_GRID is r05
+2022-12-17 03:04:07: ROF_GRID is r05
  ---------------------------------------------------
-2022-12-14 23:21:21: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
+2022-12-17 03:04:07: Component GLC is cism2 (default, higher-order, can run in parallel):cism ice evolution turned off (this is the standard configuration unless you're explicitly interested in ice evolution):
  ---------------------------------------------------
-2022-12-14 23:21:21: GLC_GRID is gland4
+2022-12-17 03:04:07: GLC_GRID is gland4
  ---------------------------------------------------
-2022-12-14 23:21:21: Component WAV is Stub wave component
+2022-12-17 03:04:07: Component WAV is Stub wave component
  ---------------------------------------------------
-2022-12-14 23:21:21: WAV_GRID is null
+2022-12-17 03:04:07: WAV_GRID is null
  ---------------------------------------------------
-2022-12-14 23:21:21: ESP_GRID is None
+2022-12-17 03:04:07: ESP_GRID is None
  ---------------------------------------------------

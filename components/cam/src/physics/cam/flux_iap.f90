@@ -4,8 +4,8 @@
         !作者：马钰斌，程雪玲，吴琳，靳江波，李奇龙，曾庆存
         !2022-12-14
         !====================================================
-        use shr_kind_mod , only :r8=> shr_kind_r8
-
+        use shr_kind_mod , only : r8=> shr_kind_r8
+        use physics_iap  , only : cal_grv,cal_psi_u,cal_psi_t,cal_psi_q,cal_qsat,cal_qsee
         implicit none 
         private 
         public cal_flux_iap 
@@ -53,7 +53,7 @@
                 real(r8)        :: q_star      !比湿摩擦速度
 
 
-                real,external   ::      grv         !重力加速度
+                real(r8)        :: grv         !重力加速度
                 
                 real(r8)        :: beta        !\beta计算粗糙度理查森数系数
                 
@@ -67,9 +67,10 @@
                 real(r8)        :: cc           !
                 real(r8)        :: rr           !粗糙度雷诺数
                 real(r8)        :: obklen        ! 奥布霍夫长度
-                real,external   ::      psi_u         !动量稳定度修正函数
-                real,external   ::      psi_t         !温度稳定度修正函数
-                real,external   ::      psi_q         !比湿稳定度修正函数
+                real(r8)        :: psi_u         !动量稳定度修正函数
+                real(r8)        :: psi_t         !温度稳定度修正函数
+                real(r8)        :: psi_q         !比湿稳定度修正函数
+
                 real(r8)        :: t_v          ! 虚温
                
                 real(r8)        :: t_v_star     ! 虚温特征量
@@ -78,11 +79,11 @@
 
         !输出变量
 
-                real(r8),intent(out)        :: tau          !应力通量
+                real(r8),intent(out)        :: tau      !应力通量
                 
-                real(r8),intent(out)        :: shf          !感热通量
+                real(r8),intent(out)        :: shf      !感热通量
         
-                real(r8),intent(out)        :: lhf          !潜热通量
+                real(r8),intent(out)        :: lhf      !潜热通量
 
 !==========================================================================
                                      !计算过程
@@ -91,6 +92,7 @@
                 von = 0.4
                 visa = 1.326e-5
                 pblh = 600 !先定义一个数，后面再进行讨论
+                call cal_grv(lat,grv)
 !随风速增大的 charnock 数
                 charn=0.011 
                 if (u > 10) then
@@ -124,7 +126,7 @@
                 u_star = 0.035 *  delta_u * log(10/z)
  
 !计算粗糙度z 
-                z0  = charn * u_star / grv(lat) + 0.11 * visa / u_star
+                z0  = charn * u_star / grv + 0.11 * visa / u_star
                 z0t = 1.15e-4
                 z0q = 1.15e-4
 !先计算中性条件下 u_*, thv_*, q_*
@@ -138,7 +140,7 @@
                 beta = 1.2
 
                Ribcu=-z/pblh/.004/beta**3 
-               Ribu=-grv(lat)*z/t*(delta_t+.61*t*delta_q)/delta_t**2 
+               Ribu=-grv*z/t*(delta_t+.61*t*delta_q)/delta_t**2 
               
             if (Ribu < 0) then 
                 zet=CC*Ribu/(1+Ribu/Ribcu) 
@@ -156,10 +158,13 @@
                 endif
 
 !计算非中性条件下的u_*,t_*,q_*
+                call cal_psi_u(zet,psi_u)
+                call cal_psi_t(zet,psi_t)
+                call cal_psi_q(zet,psi_q)
 
-               u_star   =( delta_u * von  )/(   log(z/z0) -psi_u(zet) )
-               t_star =( delta_t * von  )/(   log(z/z0t)-psi_t(zet) )
-               q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q(zet) )
+               u_star   =( delta_u * von  )/(   log(z/z0) -psi_u )
+               t_star   =( delta_t * von  )/(   log(z/z0t)-psi_t )
+               q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q )
 
                 do i = 1, nits 
 
@@ -168,7 +173,7 @@
 
                         t_v_star = t_star*(1+0.61*q)+0.61*t*q_star
 
-                        obklen = u_star**2 / ( von * (grv(lat)/t_v) * t_v_star )
+                        obklen = u_star**2 / ( von * (grv/t_v) * t_v_star )
                         zet = z / obklen 
  
 !计算表面粗糙度
@@ -177,9 +182,13 @@
                         z0t = 1.15e-4
 
 !计算u_*，t_*,q_*
-                        u_star   =( delta_u * von  )/(   log(z/z0) -psi_u(zet) )
-                        t_star   =( delta_t * von  )/(   log(z/z0t)-psi_t(zet) )
-                        q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q(zet) )
+                        call cal_psi_u(zet,psi_u)
+                        call cal_psi_t(zet,psi_t)
+                        call cal_psi_q(zet,psi_q)
+
+                        u_star   =( delta_u * von  )/(   log(z/z0) -psi_u )
+                        t_star   =( delta_t * von  )/(   log(z/z0t)-psi_t )
+                        q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q )
                 end do
 
                 tau =   rho_a * u_star * u_star * u_flag
@@ -191,112 +200,6 @@
                 
         contains
 
-        
- 
-   
-    
-
         end subroutine cal_flux_iap 
-
-
-        
-  real    function grv(lat) 
-   ! 使用纬度计算当地的重力加速度，相关的研究看“重力加速度和维度的关系”文章
-   ! 将重力加速度设为和纬度相关的三角函数
-   ! lat 的单位是度,其中w 约等于2*pi/180,grv 的单位是m/s^2
- 
-            real(r8)   :: lat, g_0 , a_1 , b_1 , w
-    
-            g_0  =  9.806
-            a_1  = -0.02575 
-            b_1  = -0.0008862
-            w    =  0.03542
-    
-            grv = g_0 + a_1 * cos( w * lat ) + b_1 * sin( w * lat )
-    
-    end function grv
-    
-    
-  real function psi_u(zet)
-        real :: x, psik,psic,f,zet,c
-        x=(1.-15.*zet)**.25 
-        psik=2.*log((1.+x)/2.)+log((1.+x*x)/2.)-2.*atan(x)+2.*atan(1.) 
-        x=(1.-10.15*zet)**.3333 
-        psic=1.5*log((1.+x+x*x)/3.)-sqrt(3.)*atan((1.+2.*x)/sqrt(3.))+4.*atan(1.)/sqrt(3.) 
-        f=zet*zet/(1+zet*zet) 
-        psi_u=(1-f)*psik+f*psic                                                
-        if(zet>0)then 
-          c=min(50.,.35*zet) 
-          psi_u=-((1+1.0*zet)**1.0+.667*(zet-14.28)/exp(c)+8.525)
-        endif 
-    end function psi_u 
-    
-  real  function psi_t(zet)
-
-        real :: x, psik,psic,f,zet,c
-        x=(1.-(15*zet))**.5 
-        psik=2*log((1+x)/2) 
-        x=(1.-(34.15*zet))**.3333 
-        psic=1.5*log((1.+x+x*x)/3.)-sqrt(3.)*atan((1.+2.*x)/sqrt(3.))+4.*atan(1.)/sqrt(3.) 
-        f=zet*zet/(1+zet*zet) 
-        psi_t=(1-f)*psik+f*psic   
-       
-        if(zet>0)then 
-          c=min(50.,.35*zet) 
-          psi_t=-((1.+2./3.*zet)**1.5+.6667*(zet-14.28)/exp(c)+8.525)
-       endif
-    end function psi_t
-
-
-
-    
-   real  function psi_q(zet)
-
-        real :: a,b,zet_0_q ,obklen,z0q,z,zet
-        a = 0.63
-        b = 1
-
-        zet_0_q = z0q/obklen
-
-        psi_q =a*(zet_0_q - zet)+ (1-b)*log(z/z0q) 
-
-
-    end function psi_q    
-
-
-
-
-  real  function qsat(y)
-! 计算饱和水汽压和饱和比湿的函数
-    real :: y(2),t,p,es
-
-    t=y(1) !temp
-    p=y(2) !pressure
-
-    es=6.112*exp(17.62*t/(t+243.12))*(1.006+3.15e-6*p-0.0074*1/p)
-
-    qsat=1000*es*0.62198/(p-.378*es)
-
-    end function qsat
-    
-   real function qsee(ts,Pa)
-
-!计算海面的饱和比湿
-
-    real :: ts,Pa,x,p,es
-
-    x=ts
-    p=Pa
-    es=6.112*exp(17.62*x/(x+243.12))*.98*(1.006+3.15e-6*p - 0.0074/p)
-
-    qsee=1000*es*62198/(p-.378*es)     !1000 *() 是为了转化单位，从 kg/kg 到 g/kg
-
-    end function
-   
-
-
-
-
-
 
       end module flux_iap

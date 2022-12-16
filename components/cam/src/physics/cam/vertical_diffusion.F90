@@ -686,10 +686,8 @@ subroutine vertical_diffusion_tend( &
   use coords_1d,          only : Coords1D
 !=======================================ma 2022-4-29=====
   use zm_conv,            only : zm_convr
-!  use physics_ma,         only : calc_pbl_h_vector_no_iterate,calc_pbl_h_deeplearn
-  
-!changshi xin xie yige wenjian ,module ,danshi meichegngong ,xiaci jixu
-!2022-9-2
+  use flux_iap,           only : cal_flux_iap   !mayubin 2022-12-16
+
 !=======================================ma ============== 
   ! --------------- !
   ! Input Arguments !
@@ -873,6 +871,8 @@ subroutine vertical_diffusion_tend( &
   real(r8)  :: zi_mean(pver)
   real(r8)  :: zi_sum
 !  real(r8)  :: zm_shuchu(pcols,pver)
+  real(r8) tau_iap(pcols),shf_iap(pcols),lhf_iap(pcols) !mayubin 2022-12-16
+
 !===============================ma 22
   character(len=3) :: cnst_type_loc(pcnst) ! local copy of cnst_type
 
@@ -1121,9 +1121,13 @@ subroutine vertical_diffusion_tend( &
 !     call addfld( 'zm_shuchu',   (/ 'lev' /)   , 'A', 'm'  , 'zm gaodu'   )
 !     call  add_default('zm_shuchu',1,'' )      
 !     call outfld( 'zm_shuchu',   zm_shuchu(:,:), pcols, lchnk )
-
-
-
+    do i = 1,ncol 
+            call cal_flux_iap(  state%zm(i,pver) ,                                                            &
+                                state%u(i,pver)  ,state%v(i,pver)  ,state%t(i,pver)  ,state%q(i,pver,1)  ,      &
+                                state%u(i,pver+1),state%v(i,pver+1),state%t(i,pver+1),state%q(i,pver+1,1),      &
+                                latvals(i)       ,rrho(i),                                                    &
+                                tau_iap(i)       ,shf_iap(i)       ,lhf_iap(i))
+    end do
 !------------------------------------------------------------------------
 !zheyiduan wei cankao code 
 !     slflx(:ncol,1) = 0._r8
