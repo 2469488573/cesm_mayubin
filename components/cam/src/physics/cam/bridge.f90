@@ -124,6 +124,7 @@
 !给可变数组分配内存
 
         allocate(w(n,m,o),stat = error)
+
         allocate(x(m),stat = error)
 
         allocate(b(n,o),stat = error)
@@ -181,8 +182,6 @@
 
 
         do i = 1,ncol
-
-
 
 !深度学习模型计算结果代码
 

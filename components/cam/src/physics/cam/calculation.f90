@@ -54,7 +54,10 @@
                 real(r8),intent(in)    :: x(n)
                 real(r8),intent(out)   :: y(n) 
                 integer            :: i
-!               select
+
+            select  case(function_kind)
+
+              case(1)!ReLU
                 do i = 1,n
                   if (x(i)>0)then
                         y(i) = x(i)
@@ -62,7 +65,17 @@
                         y(i) = 0
                   end if
                 enddo
-                  !relu_wxb(i) = max(0,wxb(i))
+
+              case(2)!tanh
+                 
+                        y = tanh(x)
+                
+              case(3)!sigmoid
+
+                        y = 1/(1 + exp(-x))
+
+             end select
+
 
         end subroutine cal_jihuo 
 

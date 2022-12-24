@@ -870,6 +870,7 @@ subroutine vertical_diffusion_tend( &
   real(r8)  :: n_l(pcols)
   real(r8)  :: zi_mean(pver)
   real(r8)  :: zi_sum
+  real(r8)  :: pbl_h_tbf(pcols)
 !  real(r8)  :: zm_shuchu(pcols,pver)
   real(r8) tau_iap(pcols),shf_iap(pcols),lhf_iap(pcols) !mayubin 2022-12-16
 
@@ -1067,14 +1068,14 @@ subroutine vertical_diffusion_tend( &
      call calc_pbl_h_vector_no_iterate(ri,state%zi(1:ncol,1:pver),pblh(:ncol),obklen(:ncol),latvals(:ncol),pver,ncol,&
                             thvs(:ncol),ustar(:ncol),cam_in%shf(:ncol),gravit,n2(:ncol,pver), &
                             pbl_h(:ncol))
-     call calc_pbl_h_deeplearn(ncol,ustar(:ncol),cam_in%lhf(:ncol),cam_in%shf(:ncol),pbl_h_dp(:ncol))
+!     call calc_pbl_h_deeplearn(ncol,ustar(:ncol),cam_in%lhf(:ncol),cam_in%shf(:ncol),pbl_h_dp(:ncol))
 
 !calculation  of cloud fractional amount    ! 2022-9-20 
      call qsat(state%t(:ncol,:), state%pmid(:ncol,:),tem2(:ncol,:), ftem(:ncol,:))
 
      ftem_prePBL(:ncol,:) = state%q(:ncol,:,1)/ftem(:ncol,:)*100._r8
 
-     call calc_pblh_tbf(ncol,thvs(:ncol),cam_in%cflx(:,1),cam_in%shf(:ncol),cam_in%lhf(:ncol),pbl_h_dp(:ncol))
+     call calc_pblh_tbf(ncol,thvs(:ncol),ustar(:ncol),cam_in%shf(:ncol),cam_in%lhf(:ncol),pbl_h_tbf(:ncol))
     
    
   call yunliang(ncol,obklen(:ncol),ftem_prePBL(:ncol,31),n_l(:ncol))   
@@ -1580,7 +1581,7 @@ subroutine vertical_diffusion_tend( &
   ! ------------------------------------------- !
   ! Writing the other standard output variables !
   ! ------------------------------------------- !
-!        pblh =PBL_H!mayubin
+        pblh =pbl_h_tbf!mayubin
 
   if (.not. do_pbl_diags) then
      call outfld( 'QT'           , qt,                        pcols, lchnk )

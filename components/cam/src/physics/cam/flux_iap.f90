@@ -129,6 +129,7 @@
                 z0  = charn * u_star / grv + 0.11 * visa / u_star
                 z0t = 1.15e-4
                 z0q = 1.15e-4
+
 !先计算中性条件下 u_*, thv_*, q_*
 
                u_star   =( delta_u * von  )/(   log(z/z0)   )
@@ -190,6 +191,8 @@
                         t_star   =( delta_t * von  )/(   log(z/z0t)-psi_t )
                         q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q )
                 end do
+
+!计算动量通量，感热通量，潜热通量
 
                 tau =   rho_a * u_star * u_star * u_flag
                 
