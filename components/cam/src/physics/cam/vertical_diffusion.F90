@@ -118,6 +118,9 @@ integer              :: ixnumice, ixnumliq
 integer              :: pblh_idx, tpert_idx, qpert_idx,pbl_h_idx,pbl_h_dp_idx!ma
 integer              :: n_l_idx ,f_canshu_idx,f_star_idx,tau_star_idx,&
                         t_surface_idx,n_pinglv_idx!,g_zhongli_idx!mayubin 2022-9-20
+
+integer              :: tau_iap_idx ,shf_iap_idx , lhf_iap_idx !mayubin 2023-1-5
+
 ! pbuf fields for unicon
 integer              :: qtl_flx_idx  = -1            ! for use in cloud macrophysics when UNICON is on
 integer              :: qti_flx_idx  = -1            ! for use in cloud macrophysics when UNICON is on
@@ -233,7 +236,11 @@ subroutine vd_register()
   call pbuf_add_field('t_surface',     'global', dtype_r8, (/pcols/), t_surface_idx)
   call pbuf_add_field('n_pinglv', 'global', dtype_r8, (/pcols,pverp/), n_pinglv_idx)
   call pbuf_add_field('n_l',       'global', dtype_r8, (/pcols/),        n_l_idx)
-
+!mayubin 2023-1-5 
+  call pbuf_add_field('tau_iap',       'global', dtype_r8, (/pcols/),        tau_iap_idx)
+  call pbuf_add_field('shf_iap',       'global', dtype_r8, (/pcols/),        shf_iap_idx)
+  call pbuf_add_field('lhf_iap',       'global', dtype_r8, (/pcols/),        lhf_iap_idx)
+!-----------------
   call pbuf_add_field('tke',      'global', dtype_r8, (/pcols, pverp/), tke_idx)
   call pbuf_add_field('turbtype', 'global', dtype_i4, (/pcols, pverp/), turbtype_idx)
   call pbuf_add_field('smaw',     'global', dtype_r8, (/pcols, pverp/), smaw_idx)
@@ -1123,12 +1130,18 @@ subroutine vertical_diffusion_tend( &
 !     call  add_default('zm_shuchu',1,'' )      
 !     call outfld( 'zm_shuchu',   zm_shuchu(:,:), pcols, lchnk )
     do i = 1,ncol 
-            call cal_flux_iap(  state%zm(i,pver) ,                                                            &
-                                state%u(i,pver)  ,state%v(i,pver)  ,state%t(i,pver)  ,state%q(i,pver,1)  ,      &
-                                state%u(i,pver+1),state%v(i,pver+1),state%t(i,pver+1),state%q(i,pver+1,1),      &
-                                latvals(i)       ,rrho(i),                                                    &
-                                tau_iap(i)       ,shf_iap(i)       ,lhf_iap(i))
+            call cal_flux_iap(  10.0_r8 ,                                                                            &
+                                state%u(i,pver-1)  ,state%v(i,pver-1)  ,state%t(i,pver-1)  ,state%q(i,pver-1,1)  ,      &
+                                state%u(i,pver),state%v(i,pver),state%t(i,pver),state%q(i,pver,1),      &
+                                latvals(i)       ,rrho(i),                                                      &
+                                tau_iap(i)       ,shf_iap(i)       ,lhf_iap(i)) 
+
+        print*,'tau = ',tau_iap(i),'shf = ',shf_iap(i) , 'lhf = ' , lhf_iap(i) 
     end do
+
+
+
+
 !------------------------------------------------------------------------
 !zheyiduan wei cankao code 
 !     slflx(:ncol,1) = 0._r8
@@ -1170,6 +1183,12 @@ subroutine vertical_diffusion_tend( &
   call outfld('tau_star', tau_star(:),pcols, lchnk)
   call outfld('t_surface', t_surface(:),pcols, lchnk)
   call outfld('n_pinglv', n_pinglv(:ncol,:),pcols, lchnk)
+
+  call outfld('tau_iap', tau_iap(:),pcols, lchnk)
+  call outfld('shf_iap', shf_iap(:),pcols, lchnk)
+  call outfld('lhf_iap', lhf_iap(:),pcols, lchnk)
+
+
   ! kvh (in pbuf) is used by other physics parameterizations, and as an initial guess in compute_eddy_diff
   ! on the next timestep.  It is not updated by the compute_vdiff call below.
   call pbuf_set_field(pbuf, kvh_idx, kvh)

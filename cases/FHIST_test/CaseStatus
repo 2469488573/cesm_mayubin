@@ -1,38 +1,51 @@
-2022-12-17 03:04:09: case.setup starting 
+2023-01-13 23:34:28: case.setup starting 
  ---------------------------------------------------
-2022-12-17 03:04:12: case.setup success 
+2023-01-13 23:34:30: case.setup success 
  ---------------------------------------------------
-2022-12-17 03:04:12: xmlchange success <command> ./xmlchange NTASKS=64  </command>
+2023-01-13 23:34:31: xmlchange success <command> ./xmlchange NTASKS=64  </command>
  ---------------------------------------------------
-2022-12-17 03:04:13: setup.clean starting 
+2023-01-13 23:34:32: setup.clean starting 
  ---------------------------------------------------
-2022-12-17 03:04:13: setup.clean success 
+2023-01-13 23:34:32: setup.clean success 
  ---------------------------------------------------
-2022-12-17 03:04:14: case.setup starting 
+2023-01-13 23:34:32: case.setup starting 
  ---------------------------------------------------
-2022-12-17 03:04:15: build.clean starting 
+2023-01-13 23:34:33: build.clean starting 
  ---------------------------------------------------
-2022-12-17 03:05:18: build.clean success 
+2023-01-13 23:35:39: build.clean success 
  ---------------------------------------------------
-2022-12-17 03:05:20: case.setup success 
+2023-01-13 23:35:41: case.setup success 
  ---------------------------------------------------
-2022-12-17 03:05:21: case.build starting 
+2023-01-13 23:35:42: case.build starting 
  ---------------------------------------------------
-2022-12-17 03:19:26: case.build success 
+2023-01-13 23:54:21: case.build success 
  ---------------------------------------------------
-2022-12-17 03:19:27: case.build starting 
+2023-01-13 23:54:22: case.build starting 
  ---------------------------------------------------
-2022-12-17 03:20:17: case.build success 
+2023-01-13 23:55:22: case.build success 
  ---------------------------------------------------
-2022-12-23 16:38:14: case.build starting 
+2023-01-14 02:56:57: case.build starting 
  ---------------------------------------------------
-2022-12-23 16:40:07: case.build success 
+2023-01-14 02:56:58: case.build error 
+ERROR: Command /public/home/chengxl/cesm/components/cam/bld/build-namelist -ntasks 64 -csmdata /data/chengxl/cesm/data_input -infile /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/camconf/namelist -ignore_ic_year -use_case hist_cam6 -inputdata /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/cam.input_data_list -namelist " &atmexp /"  failed rc=255
+out=
+err=CAM build-namelist - ERROR: Invalid namelist variable in '-infile' /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/camconf/namelist.
+ ERROR: in _validate_pair (package Build::NamelistDefinition): Variable name vgflag_pertape not found in /public/home/chengxl/cesm/components/cam/bld/namelist_files/namelist_definition.xml
  ---------------------------------------------------
-2022-12-23 18:27:54: case.build starting 
+2023-01-14 02:58:43: case.build starting 
  ---------------------------------------------------
-2022-12-23 18:30:29: case.build success 
+2023-01-14 02:58:44: case.build error 
+ERROR: Command /public/home/chengxl/cesm/components/cam/bld/build-namelist -ntasks 64 -csmdata /data/chengxl/cesm/data_input -infile /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/camconf/namelist -ignore_ic_year -use_case hist_cam6 -inputdata /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/cam.input_data_list -namelist " &atmexp /"  failed rc=255
+out=
+err=CAM build-namelist - ERROR: Invalid namelist variable in '-infile' /public/home/chengxl/cesm/cases/FHIST_test/Buildconf/camconf/namelist.
+ ERROR: in _validate_pair (package Build::NamelistDefinition): Variable name vgflag_pertape not found in /public/home/chengxl/cesm/components/cam/bld/namelist_files/namelist_definition.xml
  ---------------------------------------------------
-2022-12-24 22:42:27: case.build starting 
+2023-01-14 02:59:15: case.build starting 
  ---------------------------------------------------
-2022-12-24 22:47:26: case.build success 
+2023-01-14 02:59:51: case.build error 
+ERROR: /public/home/chengxl/cesm/cime/src/build_scripts/buildlib.csm_share FAILED, cat /data/chengxl/cesm/cimeoutput/FHIST_test/bld/csm_share.bldlog.230114-025916
+ ---------------------------------------------------
+2023-01-14 03:00:10: case.build starting 
+ ---------------------------------------------------
+2023-01-14 03:02:09: case.build success 
  ---------------------------------------------------

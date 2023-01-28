@@ -31,7 +31,7 @@
                 real(r8) ,intent(in)        ::  v_s    ! 表面的 风速v
                 real(r8) ,intent(in)        ::  t_s    ! 表面的 温度
                 real(r8) ,intent(in)        ::  q_s    ! 表面的 比湿
-                real(r8) ,intent(in)        :: lat     !纬度（度）
+                real(r8) ,intent(in)        ::  lat    !纬度（度）
 
         !中间变量
                 integer         :: i           ! 循环索引
@@ -74,8 +74,9 @@
                 real(r8)        :: t_v          ! 虚温
                
                 real(r8)        :: t_v_star     ! 虚温特征量
-
-
+                
+                real(r8)        :: cp = 1004    !空气的定压比热（J/(kg*K)）
+                real(r8)        :: le = 2200000 !汽化潜热（J/kg）
 
         !输出变量
 
@@ -89,10 +90,16 @@
                                      !计算过程
 !==========================================================================                
 !先定义常参数
+
+
+
+                print*,'u,v,t,q',u,v,t,q
+                print*,'u_s,v_s,t_s,q_s',u_s,v_s,t_s,q_s
                 von = 0.4
                 visa = 1.326e-5
                 pblh = 600 !先定义一个数，后面再进行讨论
                 call cal_grv(lat,grv)
+                print*,'lat = ', lat,'grv = ',grv
 !随风速增大的 charnock 数
                 charn=0.011 
                 if (u > 10) then
@@ -101,6 +108,7 @@
                 if (u > 18) then
                   charn=0.018 
                 endif 
+
 ! 由于一些时候，风速的差值很小，可能为0
 ! ，这样会导致计算不稳定，规定存在风速差最小值
 
@@ -108,10 +116,10 @@
 
 !判断方向
                u_flag = (u- u_s) / abs( u-u_s )
-
+                print*,'u_flag = ' , u_flag
 !计算差值
                 delta_u = sqrt( (u-u_s)**2  + u_min**2 )
-                
+                print*,'delta_u =',delta_u
 !coare 的问题之一是：
 !在处理速度的时候没有考虑方向，因此不能够计算出负的应力通量，之前的理论在计算陆地的通量是没问题的，因为陆地上速度总是为0，这样都是动量被地面消耗，但是海洋上，海流也是存在速度的，这样不分辨方向是致命的错误，可能是海洋向大气输送纬向动量。因此，在最后计算方向的时候乘上代表方向的单位量(u_flag = -1 或者 +1)! 因此加上方向  
 
@@ -119,11 +127,13 @@
 
                 delta_t = t - t_s 
 
+                print*,'delta_t =',delta_t
                 delta_q = q - q_s
                 
+                print*,'delta_q =',delta_q
 !预估摩擦速度
 
-                u_star = 0.035 *  delta_u * log(10/z)
+                u_star = 0.035 *  delta_u ! * log(10/z)
  
 !计算粗糙度z 
                 z0  = charn * u_star / grv + 0.11 * visa / u_star
@@ -135,14 +145,14 @@
                u_star   =( delta_u * von  )/(   log(z/z0)   )
                t_star   =( delta_t * von  )/(   log(z/z0t)  )  
                q_star   =( delta_q * von  )/(   log(z/z0q)  )
-
+                print*,'utq*',u_star,t_star,q_star
 ! 计算 L 
 !没有通量没办法计算L， 只能通过理查森数来预估L
                 beta = 1.2
-
+                CC = 1.0_r8! coare cc = von*ct/cd 
                Ribcu=-z/pblh/.004/beta**3 
                Ribu=-grv*z/t*(delta_t+.61*t*delta_q)/delta_t**2 
-              
+                
             if (Ribu < 0) then 
                 zet=CC*Ribu/(1+Ribu/Ribcu) 
             else 
@@ -150,7 +160,7 @@
             endif 
 
                 obklen = z/zet
-
+                print*,'obklen', obklen,'zet',zet,'CC',CC
 !定义迭代次数(如果非常稳定，就不迭代)
                 if (zet>50)then
                         nits = 1
@@ -167,11 +177,13 @@
                t_star   =( delta_t * von  )/(   log(z/z0t)-psi_t )
                q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q )
 
+                print*,'utq*_with_psi' , u_star,t_star,q_star
+
                 do i = 1, nits 
 
 !首先计算奥布霍夫长度,稳定度参数                        
                         t_v = t * ( 1 + 0.61 * q )  !单位再确认下
-
+                
                         t_v_star = t_star*(1+0.61*q)+0.61*t*q_star
 
                         obklen = u_star**2 / ( von * (grv/t_v) * t_v_star )
@@ -192,14 +204,31 @@
                         q_star   =( delta_q * von  )/(   log(z/z0q)-psi_q )
                 end do
 
+                print*,'t_v' ,t_v
+                print*,'t_v_star', t_v_star
+                print*,'obklen' ,  obklen
+                print*,'zet' , zet 
+                print*,'rr' ,rr
+                print*,'psi_u ',psi_u
+                   
+                print*,'psi_t ',psi_t
+
+                print*,'psi_q ',psi_q
+
+                print*,'u*', u_star
+                print*,'t*',t_star 
+                print*,'q*', q_star   
+
+
 !计算动量通量，感热通量，潜热通量
 
                 tau =   rho_a * u_star * u_star * u_flag
                 
-                shf = - rho_a * u_star * t_star 
+                shf = - rho_a * cp * u_star * t_star 
 
-                lhf = - rho_a * u_star * q_star 
-                       
+                lhf = - rho_a * le * u_star * q_star 
+                
+                print*,'tau=', tau, 'shf',shf,'lhf',lhf
                 
         contains
 

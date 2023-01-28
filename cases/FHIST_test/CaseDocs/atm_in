@@ -13,6 +13,7 @@
  do_beljaars		=  .true.  
 /
 &cam_history_nl
+ avgflag_pertape		= 'A','I'
  fincl1		= 'dst_a1', 'dst_c1', 'dst_a3', 'dst_c3', 'dst_a1_SRF', 'dst_a3_SRF', 'dst_a1DDF', 'dst_a1SFWET',
          'dst_c1DDF', 'dst_c1SFWET', 'dst_a3DDF', 'dst_a3SFWET', 'dst_c3DDF', 'dst_c3SFWET', 'SSAVIS', 'AODABS',
          'AODDUST2', 'bc_a1', 'bc_a4', 'dst_a1', 'dst_a2', 'dst_a3', 'ncl_a1', 'ncl_a1',
@@ -47,6 +48,10 @@
          'bc_a1SFWET', 'bc_a1_SRF', 'bc_a4', 'bc_a4DDF', 'bc_a4SFWET', 'bc_a4_SRF', 'bc_c1', 'bc_c1DDF',
          'bc_c1SFWET', 'num_a2', 'num_a3', 'num_a4', 'so4_a1', 'so4_a2', 'so4_a3', 'so4_c1',
          'O3', 'O3colAbove'
+ fincl2		= 'pbl_h', 'pbl_h_dp', 'PBLH', 'n_l', 'f_canshu', 'f_star', 'tau_star', 't_surface', 'n_pinglv', 'tau_iap',
+         'shf_iap', 'lhf_iap'
+ mfilt		= 12,480
+ nhtfrq		= 0,1
 /
 &cam_initfiles_nl
  bnd_topo		= '/data/chengxl/cesm/data_input/atm/cam/topo/fv_1.9x2.5_nc3000_Nsw084_Nrs016_Co120_Fi001_ZR_GRNL_031819.nc'

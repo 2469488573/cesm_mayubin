@@ -70,11 +70,12 @@
           real(r8) :: a,b,zet_0_q ,obklen,z0q,z,zet,psi_q
           a = 0.63
           b = 1
+          z = 10
+          z0q = 10**-6 
+          zet_0_q =0               ! z0q/obklen
   
-          zet_0_q = z0q/obklen
-  
-          psi_q =a*(zet_0_q - zet)+ (1-b)*log(z/z0q) 
-  
+!          psi_q =a*(zet_0_q - zet) !+ (1-b)*log(z/z0q) 
+          psi_q = -a*0.01*zet
   
       end subroutine cal_psi_q    
   

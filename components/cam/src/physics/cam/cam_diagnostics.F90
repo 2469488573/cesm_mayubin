@@ -103,6 +103,10 @@ integer  ::      snow_pcw_idx = 0
 integer :: tpert_idx=-1, qpert_idx=-1, pblh_idx=-1,pbl_h_idx = -1,pbl_h_dp_idx = -1!ma
 integer :: n_l_idx = -1,f_canshu_idx=-1,f_star_idx=-1,tau_star_idx=-1,t_surface_idx=-1,&
           n_pinglv_idx=-1!mayubin2022-9-20 ,9-26
+
+integer :: tau_iap_idx=-1 ,shf_iap_idx=-1 , lhf_iap_idx =-1
+!mayubin2023-1-5
+
 integer :: trefmxav_idx = -1, trefmnav_idx = -1
 
 contains
@@ -191,6 +195,11 @@ contains
     call addfld ( 'tau_star',       horiz_only ,  'A','Nm^-2'  ,  'ying li tong liang' )!mayuybin22-9-26
     call addfld ( 't_surface',       horiz_only ,  'A','K'  ,  'biaomianwendu ' )!mayuybin22-9-26
     call addfld ( 'n_pinglv',       (/'lev'/) ,  'A','s^-1'  ,  'fulipinglv' )!mayuybin22-9-26
+    call addfld ( 'tau_iap',       horiz_only ,  'A','Nm^-2'  ,  'feng ying li iap' )!mayuybin23-1-5
+    call addfld ( 'shf_iap',       horiz_only ,  'A','wm^-1'  ,  'gan re tong liang iap ' )!mayuybin23-1-5
+    call addfld ( 'lhf_iap',       horiz_only ,  'A','wm^-1'  ,  'qian re tong liang' )!mayuybin23-1-5
+ 
+
     call addfld (cnst_name(1), (/ 'lev' /), 'A', 'kg/kg',    cnst_longname(1))
     call addfld ('NSTEP',      horiz_only,  'A', 'timestep', 'Model timestep')
     call addfld ('PHIS',       horiz_only,  'I', 'm2/s2',    'Surface geopotential')
@@ -719,6 +728,14 @@ contains
     tau_star_idx     = pbuf_get_index( 'tau_star',errcode = ierr) !mayubin2022-9-20
     t_surface_idx     = pbuf_get_index( 't_surface',errcode = ierr) !mayubin2022-9-20
     n_pinglv_idx     = pbuf_get_index( 'n_pinglv',errcode = ierr) !mayubin2022-9-20
+    tau_iap_idx     = pbuf_get_index( 'tau_iap',errcode = ierr) !mayubin2023-1-5
+    shf_iap_idx     = pbuf_get_index( 'shf_iap',errcode = ierr) !mayubin2023-1-5
+    lhf_iap_idx     = pbuf_get_index( 'lhf_iap',errcode = ierr) !mayubin2023-1-5
+ 
+
+
+
+
     tpert_idx = pbuf_get_index('tpert', errcode=ierr)
     qpert_idx = pbuf_get_index('qpert', errcode=ierr)
 
@@ -1885,7 +1902,7 @@ contains
     real(r8), pointer, dimension(:,:) :: conv_var_3d
     real(r8), pointer, dimension(:  ) :: conv_var_2d
     real(r8), pointer :: tpert(:),pblh(:),qpert(:),pbl_h(:),pbl_h_dp(:),n_l(:),&
-                        f_canshu(:),f_star(:),tau_star(:),t_surface(:),n_pinglv(:)!mayubin 22-9-20 9-26
+                        f_canshu(:),f_star(:),tau_star(:),t_surface(:),n_pinglv(:) , tau_iap(:),shf_iap(:),lhf_iap(:)!mayubin 22-9-20 9-26 23-1-5
     !
     !-----------------------------------------------------------------------
     !
@@ -1975,7 +1992,16 @@ contains
         call outfld('t_surface',t_surface,pcols,lchnk) !mayubin 22-9-26
 
         call pbuf_get_field(pbuf,n_pinglv_idx,n_pinglv)
-        call outfld('n_pinglv',n_pinglv,pcols,lchnk) !mayubin 22-9-26
+        call outfld('n_pinglv',n_pinglv,pcols,lchnk) !mayubin 23-1-5
+
+        call pbuf_get_field(pbuf,tau_iap_idx,tau_iap)
+        call outfld('tau_iap',tau_iap,pcols,lchnk) !mayubin 23-1-5
+
+        call pbuf_get_field(pbuf,shf_iap_idx,shf_iap)
+        call outfld('shf_iap',shf_iap,pcols,lchnk) !mayubin 23-1-5
+
+        call pbuf_get_field(pbuf,lhf_iap_idx,lhf_iap)
+        call outfld('lhf_iap',lhf_iap,pcols,lchnk) !mayubin 23-1-5
 
 
 

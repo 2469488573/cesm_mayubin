@@ -1,7 +1,7 @@
 &modelio
   diri = "/data/chengxl/cesm/cimeoutput/FHIST_test/bld/esp"
   diro = "/data/chengxl/cesm/cimeoutput/FHIST_test/run"
-  logfile = "esp.log.221224-224228"
+  logfile = "esp.log.230114-030011"
 /
 &pio_inparm
   pio_netcdf_format = ""
